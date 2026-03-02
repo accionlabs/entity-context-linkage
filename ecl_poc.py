@@ -29,6 +29,16 @@ class EntityType(Enum):
     PERSON = "Person"
     DIAGNOSIS = "Diagnosis"
     MEDICATION = "Medication"
+    # Telecom REIT domain types
+    BILLING_RECORD = "BillingRecord"
+    INSPECTION = "Inspection"
+    GROUND_LEASE = "GroundLease"
+    AMENDMENT = "Amendment"
+    # Adaptive / catch-all
+    LOCATION = "Location"
+    EVENT = "Event"
+    PRODUCT = "Product"
+    OTHER = "Other"
 
 class RelationshipType(Enum):
     OCCUPIES = "OCCUPIES"
@@ -45,6 +55,13 @@ class RelationshipType(Enum):
     PRESCRIBED_BY = "PRESCRIBED_BY"
     HAS_DIAGNOSIS = "HAS_DIAGNOSIS"
     TAKES = "TAKES"
+    # Telecom REIT reconciliation relationships
+    HAS_BILLING = "HAS_BILLING"
+    HAS_INSPECTION = "HAS_INSPECTION"
+    RECONCILIATION_MISMATCH = "RECONCILIATION_MISMATCH"
+    # Adaptive / catch-all
+    ADAPTIVE = "ADAPTIVE"
+    RELATED_TO = "RELATED_TO"
 
 class Severity(Enum):
     LOW = "LOW"

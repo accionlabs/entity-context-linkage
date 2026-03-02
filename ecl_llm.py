@@ -67,16 +67,15 @@ class OllamaClient:
             "prompt": prompt,
             "stream": False,
             "options": {
-                "temperature": 0.1,  # Low temp for consistent extraction
-                "num_predict": 2048,
-                "num_ctx": 8192,  # Use full model context capacity
+                "temperature": 0.1  # Low temp for consistent extraction
             }
         }
 
         if system:
             payload["system"] = system
 
-        if format_json:
+        # DO NOT send format="json" for llama3:8b, it causes HTTP 500 on this machine
+        if format_json and "llama3:8b" not in self.model:
             payload["format"] = "json"
 
         try:
@@ -87,7 +86,7 @@ class OllamaClient:
                 headers={"Content-Type": "application/json"},
                 method="POST"
             )
-            with urllib.request.urlopen(req, timeout=60) as response:
+            with urllib.request.urlopen(req, timeout=120) as response:
                 result = json.loads(response.read().decode("utf-8"))
                 response_text = result.get("response", "")
 
@@ -95,15 +94,26 @@ class OllamaClient:
                     try:
                         return json.loads(response_text)
                     except json.JSONDecodeError:
-                        # Try to extract JSON from response
+                        # Try to extract JSON from response (useful if we had to disable the strict format flag)
                         json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
                         if json_match:
-                            return json.loads(json_match.group())
+                            try:
+                                return json.loads(json_match.group())
+                            except json.JSONDecodeError:
+                                pass
+                        # If we get here, LLM failed to output JSON at all
+                        err_msg = f"    [Ollama Error] LLM did not return valid JSON. Raw output: {response_text[:400]}..."
+                        print(err_msg)
+                        with open("ecl_debug.log", "a") as f:
+                            f.write(err_msg + "\n")
                         return None
                 return {"text": response_text}
 
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
-            print(f"    [Ollama Error] {e}")
+        except Exception as e:
+            err_msg = f"    [Ollama Error / Network] {e}"
+            print(err_msg)
+            with open("ecl_debug.log", "a") as f:
+                f.write(err_msg + "\n")
             return None
 
 
@@ -118,6 +128,7 @@ class LLMBaseExpert(BaseExpert):
         super().__init__(name)
         self.client = client
         self.fallback = fallback_expert
+        self.hallucination_mode = "strict"  # strict | moderate | off
 
     def get_system_prompt(self) -> str:
         """Override in subclass for domain-specific system prompt."""
@@ -179,7 +190,7 @@ class LLMBaseExpert(BaseExpert):
             return ExtractionResult(expert_name=self.name, reasoning="LLM extraction failed")
 
         try:
-            result = self.parse_llm_response(response)
+            result = self.parse_llm_response(response, text)
             result.reasoning = f"[LLM] {result.reasoning}"
 
             # --- MODEL VERSIONING: stamp each entity ---
@@ -192,12 +203,26 @@ class LLMBaseExpert(BaseExpert):
             validated_entities = []
             hallucinated_count = 0
             for entity in result.entities:
+                if self.hallucination_mode == "off":
+                    # Skip validation entirely — accept all LLM entities
+                    validated_entities.append(entity)
+                    continue
+
                 validation = validate_entity(entity, text)
                 if validation["valid"]:
                     validated_entities.append(entity)
-                else:
+                elif self.hallucination_mode == "moderate":
+                    # Warn but keep — lower confidence and tag
                     hallucinated_count += 1
-                    entity.confidence = 0.0  # Mark as hallucinated
+                    entity.confidence = max(entity.confidence * 0.7, MIN_CONFIDENCE)
+                    entity.properties["_hallucination_warning"] = '; '.join(validation['reasons'])
+                    validated_entities.append(entity)
+                    print(f"    ⚠️ [HALLUCINATION-WARN] Kept '{entity.name}' with reduced confidence: "
+                          f"{'; '.join(validation['reasons'])}")
+                else:
+                    # Strict mode — reject
+                    hallucinated_count += 1
+                    entity.confidence = 0.0
                     print(f"    🚫 [HALLUCINATION] Rejected '{entity.name}': "
                           f"{'; '.join(validation['reasons'])}")
             result.entities = validated_entities
@@ -667,6 +692,242 @@ Return JSON format:
         )
         return result
 
+# ============================================================
+# SECTION 7B: ADAPTIVE LLM EXPERT (DOCUMENT-ADAPTIVE)
+# ============================================================
+
+# Type mapping: LLM-discovered type string → EntityType enum
+_ENTITY_TYPE_MAP = {
+    # People
+    "person": EntityType.PERSON, "individual": EntityType.PERSON,
+    "patient": EntityType.PERSON, "doctor": EntityType.PERSON,
+    "employee": EntityType.PERSON, "author": EntityType.PERSON,
+    # Organizations
+    "organization": EntityType.COMPANY, "company": EntityType.COMPANY,
+    "institution": EntityType.COMPANY, "agency": EntityType.COMPANY,
+    "corporation": EntityType.COMPANY, "firm": EntityType.COMPANY,
+    "department": EntityType.COMPANY, "team": EntityType.COMPANY,
+    # Contracts & agreements
+    "contract": EntityType.CONTRACT, "agreement": EntityType.CONTRACT,
+    "lease": EntityType.CONTRACT, "license": EntityType.CONTRACT,
+    "policy": EntityType.CONTRACT, "amendment": EntityType.AMENDMENT,
+    # Equipment & assets
+    "equipment": EntityType.EQUIPMENT, "device": EntityType.EQUIPMENT,
+    "hardware": EntityType.EQUIPMENT, "asset": EntityType.EQUIPMENT,
+    "tool": EntityType.EQUIPMENT, "instrument": EntityType.EQUIPMENT,
+    # Financial
+    "financial": EntityType.FINANCIAL, "payment": EntityType.FINANCIAL,
+    "invoice": EntityType.FINANCIAL, "revenue": EntityType.FINANCIAL,
+    "cost": EntityType.FINANCIAL, "fee": EntityType.FINANCIAL,
+    "monetary": EntityType.FINANCIAL, "amount": EntityType.FINANCIAL,
+    # Risk
+    "risk": EntityType.RISK, "threat": EntityType.RISK,
+    "vulnerability": EntityType.RISK, "issue": EntityType.RISK,
+    # Opportunity
+    "opportunity": EntityType.OPPORTUNITY,
+    # Location
+    "location": EntityType.LOCATION, "address": EntityType.LOCATION,
+    "site": EntityType.LOCATION, "city": EntityType.LOCATION,
+    "country": EntityType.LOCATION, "region": EntityType.LOCATION,
+    "place": EntityType.LOCATION,
+    # Medical
+    "diagnosis": EntityType.DIAGNOSIS, "condition": EntityType.DIAGNOSIS,
+    "disease": EntityType.DIAGNOSIS,
+    "medication": EntityType.MEDICATION, "drug": EntityType.MEDICATION,
+    # Events
+    "event": EntityType.EVENT, "date": EntityType.EVENT,
+    "meeting": EntityType.EVENT, "deadline": EntityType.EVENT,
+    # Products
+    "product": EntityType.PRODUCT, "service": EntityType.PRODUCT,
+    "software": EntityType.PRODUCT,
+    # Domain-specific
+    "tower": EntityType.TOWER, "inspection": EntityType.INSPECTION,
+}
+
+# Relationship mapping
+_RELATIONSHIP_TYPE_MAP = {
+    "has_contract": RelationshipType.HAS_CONTRACT,
+    "has_equipment": RelationshipType.HAS_EQUIPMENT,
+    "occupies": RelationshipType.OCCUPIES,
+    "owns": RelationshipType.OWNED_BY,
+    "owned_by": RelationshipType.OWNED_BY,
+    "installed_on": RelationshipType.INSTALLED_ON,
+    "has_risk": RelationshipType.HAS_RISK,
+    "affects": RelationshipType.AFFECTS,
+    "has_opportunity": RelationshipType.HAS_OPPORTUNITY,
+    "targets": RelationshipType.TARGETS,
+    "involves": RelationshipType.INVOLVES,
+    "takes": RelationshipType.TAKES,
+    "prescribed_by": RelationshipType.PRESCRIBED_BY,
+    "has_diagnosis": RelationshipType.HAS_DIAGNOSIS,
+}
+
+def _map_entity_type(type_str: str) -> EntityType:
+    """Map an LLM-discovered type string to EntityType enum."""
+    key = type_str.lower().strip()
+    return _ENTITY_TYPE_MAP.get(key, EntityType.OTHER)
+
+def _map_relationship_type(type_str: str) -> RelationshipType:
+    """Map an LLM-discovered relationship string to RelationshipType enum."""
+    key = type_str.lower().strip().replace(" ", "_")
+    return _RELATIONSHIP_TYPE_MAP.get(key, RelationshipType.ADAPTIVE)
+
+
+class AdaptiveLLMExpert(LLMBaseExpert):
+    """
+    Document-adaptive LLM expert.
+    Discovers entity types and relationships from ANY document — no hardcoded schema.
+    """
+
+    def __init__(self, client: OllamaClient):
+        super().__init__("AdaptiveLLMExpert", client, fallback_expert=None)
+
+    def get_system_prompt(self) -> str:
+        return (
+            "You are an expert entity extraction and knowledge graph construction system. "
+            "Given ANY document — legal, medical, financial, technical, or otherwise — you: "
+            "1) Discover what types of entities are present, "
+            "2) Extract each entity with its type, name, and key properties, "
+            "3) Identify ALL relationships between entities. "
+            "Return valid JSON. Be thorough — extract every meaningful entity and relationship."
+        )
+
+    def get_extraction_prompt(self, text: str) -> str:
+        return f"""Analyze this document and extract ALL granular entities and relationships.
+
+IMPORTANT RULES:
+1. Do NOT extract the document itself as an entity. Do NOT extract the title or headers. Extract the SPECIFIC things inside it (Companies, People, Contracts, Equipment, Locations, Prices, Dates, Risks).
+2. For EVERY entity, extract its name, type, and key properties.
+3. For EVERY entity, identify at least one relationship to another entity.
+
+EXAMPLE INPUT:
+"Acme Corp signed Lease Agreement #123 for the rooftop at 55 Main St. The rent is $500/month."
+
+EXAMPLE JSON OUTPUT:
+{{
+  "entities": [
+    {{"name": "Acme Corp", "type": "Company", "properties": {{}}, "confidence": 0.99}},
+    {{"name": "Lease Agreement #123", "type": "Contract", "properties": {{"rent": "$500/month"}}, "confidence": 0.99}},
+    {{"name": "55 Main St", "type": "Location", "properties": {{"placement": "rooftop"}}, "confidence": 0.95}}
+  ],
+  "relationships": [
+    {{"source": "Acme Corp", "target": "Lease Agreement #123", "type": "SIGNED", "confidence": 0.99}},
+    {{"source": "Lease Agreement #123", "target": "55 Main St", "type": "LOCATED_AT", "confidence": 0.95}}
+  ]
+}}
+
+NOW PROCESS THIS DOCUMENT:
+{text[:6000]}
+
+Return ONLY valid JSON matching the format above:"""
+
+    def parse_llm_response(self, response: Dict, original_text: str = "") -> ExtractionResult:
+        result = ExtractionResult(expert_name=self.name)
+
+        raw_entities = response.get("entities", [])
+        raw_rels = response.get("relationships", [])
+
+        # Programmatic guard: don't let the LLM extract the document title as an entity
+        doc_header = original_text[:100].lower() if original_text else ""
+
+        # Build entity name → id map for relationship wiring
+        name_to_id = {}
+
+        for i, ent in enumerate(raw_entities):
+            name = str(ent.get("name", f"Entity_{i}")).strip()
+
+            # Filter out document-level hallucinated entities
+            if name.lower() in doc_header and len(name) > 10 and ent.get("type", "").lower() in ["document", "other", "report", "file"]:
+                continue
+            discovered_type = str(ent.get("type", "Other")).strip()
+            mapped_type = _map_entity_type(discovered_type)
+            props = ent.get("properties", {})
+            if isinstance(props, str):
+                props = {"raw": props}
+            elif not isinstance(props, dict):
+                props = {}
+
+            # Store the LLM-discovered type for display
+            props["_discovered_type"] = discovered_type
+
+            eid = f"adaptive_{name.lower().replace(' ', '_').replace('#', '')}_{i}"
+            name_to_id[name.lower()] = eid
+
+            conf = ent.get("confidence", 0.90)
+            if isinstance(conf, str):
+                try:
+                    conf = float(conf)
+                except ValueError:
+                    conf = 0.90
+            conf = max(0.0, min(1.0, conf))
+
+            entity = Entity(
+                id=eid,
+                type=mapped_type,
+                name=name,
+                properties=props,
+                source_expert=self.name,
+                confidence=conf,
+            )
+            result.entities.append(entity)
+
+        # Build relationships (with fuzzy matching to tolerate LLM name variations)
+        def find_closest_entity_id(target_name: str) -> Optional[str]:
+            target = target_name.lower().strip()
+            if not target: return None
+            # Exact match first
+            if target in name_to_id: return name_to_id[target]
+            # Substring match (e.g. LLM says "Verizon" instead of "Verizon Wireless")
+            for k, v in name_to_id.items():
+                if target in k or k in target:
+                    return v
+            return None
+
+        for rel in raw_rels:
+            src_name = str(rel.get("source", "")).strip().lower()
+            tgt_name = str(rel.get("target", "")).strip().lower()
+            rel_type_str = str(rel.get("type", "RELATED_TO")).strip()
+            rel_conf = rel.get("confidence", 0.85)
+            if isinstance(rel_conf, str):
+                try:
+                    rel_conf = float(rel_conf)
+                except ValueError:
+                    rel_conf = 0.85
+
+            src_id = find_closest_entity_id(src_name)
+            tgt_id = find_closest_entity_id(tgt_name)
+
+            if src_id and tgt_id and src_id != tgt_id:
+                mapped_rel = _map_relationship_type(rel_type_str)
+                relationship = Relationship(
+                    source_id=src_id,
+                    target_id=tgt_id,
+                    type=mapped_rel,
+                    properties={"_discovered_type": rel_type_str},
+                    confidence=rel_conf,
+                )
+                result.relationships.append(relationship)
+
+        # Fallback relationship wiring if LLM dropped the ball entirely but extracted entities
+        if len(result.relationships) == 0 and len(result.entities) > 1:
+            # Connect everything to the first entity in the list as a fallback star-graph
+            root_id = result.entities[0].id
+            for ent in result.entities[1:]:
+                result.relationships.append(Relationship(
+                    source_id=root_id,
+                    target_id=ent.id,
+                    type=RelationshipType.RELATED_TO,
+                    properties={"_discovered_type": "RELATED_TO (Inferred)"},
+                    confidence=0.5
+                ))
+
+        result.reasoning = (
+            f"Adaptive extraction: {len(result.entities)} entities across "
+            f"{len(set(e.type.value for e in result.entities))} discovered types, "
+            f"{len(result.relationships)} relationships"
+        )
+        return result
+
 
 # ============================================================
 # SECTION 8: LLM MOE ORCHESTRATOR
@@ -679,18 +940,26 @@ class LLMMoEOrchestrator:
     Includes: Pipeline tracing, per-expert timing, confidence guardrails.
     """
 
-    def __init__(self, model: str = "llama3:8b", ollama_host: str = None):
-        # Use environment variable or parameter, fallback to localhost
-        import os
-        if ollama_host is None:
-            ollama_host = os.getenv("OLLAMA_HOST", "http://localhost:11434")
-        self.client = OllamaClient(base_url=ollama_host, model=model)
-        self.experts: List[LLMBaseExpert] = [
-            LLMContractExpert(self.client),
-            LLMEquipmentExpert(self.client),
-            LLMFinancialRiskExpert(self.client),
-            LLMOpportunityExpert(self.client),
-        ]
+    def __init__(self, model: str = "llama3:8b", hallucination_mode: str = "strict",
+                 adaptive: bool = False):
+        self.client = OllamaClient(model=model)
+        self.hallucination_mode = hallucination_mode  # strict | moderate | off
+        self.adaptive = adaptive
+
+        if adaptive:
+            self.experts: List[LLMBaseExpert] = [
+                AdaptiveLLMExpert(self.client),
+            ]
+        else:
+            self.experts: List[LLMBaseExpert] = [
+                LLMContractExpert(self.client),
+                LLMEquipmentExpert(self.client),
+                LLMFinancialRiskExpert(self.client),
+                LLMOpportunityExpert(self.client),
+            ]
+        # Propagate hallucination mode to all experts
+        for expert in self.experts:
+            expert.hallucination_mode = hallucination_mode
         self.last_pipeline_trace: Optional[PipelineTrace] = None
 
     def extract_all(self, text: str, context: Dict = None) -> Dict[str, ExtractionResult]:

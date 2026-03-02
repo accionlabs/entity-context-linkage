@@ -1,0 +1,392 @@
+tower_id,tower_type,tower_height_ft,tia_standard,max_tenant_capacity,current_tenants,available_slots,max_wind_load_sqft,current_wind_load_sqft,utilization_pct,total_antennas,last_structural_analysis_date,analysis_stale,discrepancy_type,revenue_opportunity_monthly
+CC-TWR-691380,Self-Supporting Lattice,210,TIA-222-H,4,3,1,53.2,125.0,235.0,32,2023-03-14,True,near_structural_limit,0
+CC-TWR-620465,Self-Supporting Lattice,140,TIA-222-F,4,1,3,58.8,24.0,40.8,10,2023-07-10,True,none,0
+CC-TWR-345386,Monopole,90,TIA-222-G,4,1,3,59.7,69.9,117.2,19,2023-07-31,True,near_structural_limit,0
+CC-TWR-384076,Stealth/Concealed,170,TIA-222-G,3,2,1,75.0,120.0,160.0,35,2024-10-18,False,near_structural_limit,0
+CC-TWR-239816,Self-Supporting Lattice,330,TIA-222-H,5,1,4,59.8,37.4,62.5,11,2023-05-20,True,none,0
+CC-TWR-324597,Monopole,180,TIA-222-F,5,1,4,82.3,60.7,73.7,16,2023-10-31,True,none,0
+CC-TWR-409030,Rooftop,250,TIA-222-H,3,2,1,50.6,31.1,61.5,15,2023-11-05,True,none,0
+CC-TWR-786406,Rooftop,290,TIA-222-F,4,2,2,53.2,65.8,123.6,28,2024-12-14,False,near_structural_limit,0
+CC-TWR-717661,Monopole,330,TIA-222-G,5,2,3,84.2,67.6,80.3,17,2023-12-30,True,none,0
+CC-TWR-296059,Monopole,130,TIA-222-H,3,2,1,46.9,56.8,121.0,15,2023-12-03,True,near_structural_limit,0
+CC-TWR-608149,Stealth/Concealed,120,TIA-222-F,4,1,3,88.1,27.4,31.1,9,2023-07-23,True,undersold_capacity,4690.36
+CC-TWR-749253,Monopole,270,TIA-222-G,4,1,3,54.3,29.1,53.5,11,2024-06-15,False,none,0
+CC-TWR-472358,Monopole,180,TIA-222-H,5,3,2,55.8,60.3,108.0,19,2023-06-23,True,near_structural_limit,0
+CC-TWR-825423,Self-Supporting Lattice,260,TIA-222-G,4,1,3,57.6,46.6,81.0,17,2024-08-31,False,none,0
+CC-TWR-201255,Monopole,310,TIA-222-H,3,2,1,56.5,50.8,89.9,18,2023-02-22,True,none,0
+CC-TWR-924265,Self-Supporting Lattice,180,TIA-222-F,4,1,3,58.1,43.4,74.6,21,2024-04-10,False,none,0
+CC-TWR-901909,Self-Supporting Lattice,290,TIA-222-G,4,2,2,65.0,68.5,105.4,22,2023-03-02,True,near_structural_limit,0
+CC-TWR-810859,Self-Supporting Lattice,240,TIA-222-H,3,1,2,49.1,29.6,60.2,13,2023-01-12,True,none,0
+CC-TWR-622230,Guyed Tower,280,TIA-222-H,7,2,5,138.1,43.1,31.2,16,2023-10-01,True,undersold_capacity,3039.37
+CC-TWR-971482,Monopole,120,TIA-222-H,3,3,0,77.8,93.9,120.7,31,2024-08-04,False,near_structural_limit,0
+CC-TWR-755910,Stealth/Concealed,290,TIA-222-F,5,1,4,76.2,31.2,40.9,8,2023-04-02,True,none,0
+CC-TWR-653306,Monopole,270,TIA-222-F,3,2,1,86.8,69.7,80.4,19,2024-01-03,True,outdated_analysis,0
+CC-TWR-689318,Monopole,300,TIA-222-H,3,2,1,42.5,66.9,157.5,19,2024-11-05,False,near_structural_limit,0
+CC-TWR-336650,Stealth/Concealed,320,TIA-222-G,4,1,3,75.7,28.1,37.1,10,2023-06-02,True,undersold_capacity,5683.0
+CC-TWR-226882,Guyed Tower,150,TIA-222-F,6,2,4,93.3,29.0,31.0,10,2023-07-27,True,undersold_capacity,4910.61
+CC-TWR-561865,Monopole,180,TIA-222-F,5,2,3,60.0,26.5,44.1,12,2024-06-12,False,outdated_analysis,0
+CC-TWR-680189,Monopole,260,TIA-222-H,4,2,2,70.1,50.6,72.2,20,2023-06-29,True,none,0
+CC-TWR-251195,Self-Supporting Lattice,320,TIA-222-H,4,2,2,87.6,37.0,42.3,12,2023-06-28,True,none,0
+CC-TWR-552275,Monopole,280,TIA-222-H,3,2,1,51.3,50.2,98.0,21,2024-01-28,True,near_structural_limit,0
+CC-TWR-780027,Monopole,180,TIA-222-G,5,1,4,78.8,25.3,32.1,12,2023-11-14,True,undersold_capacity,5668.94
+CC-TWR-924040,Stealth/Concealed,200,TIA-222-G,5,1,4,70.6,23.4,33.1,8,2023-09-21,True,undersold_capacity,2540.78
+CC-TWR-924566,Guyed Tower,200,TIA-222-F,7,2,5,145.7,56.8,39.0,15,2024-03-09,True,undersold_capacity,2916.74
+CC-TWR-440998,Monopole,230,TIA-222-F,5,2,3,72.8,91.3,125.4,27,2023-06-19,True,near_structural_limit,0
+CC-TWR-294969,Rooftop,110,TIA-222-F,3,1,2,53.2,28.7,54.0,9,2023-04-08,True,none,0
+CC-TWR-162804,Stealth/Concealed,120,TIA-222-F,3,3,0,71.2,117.6,165.2,31,2024-08-02,False,near_structural_limit,0
+CC-TWR-359168,Self-Supporting Lattice,310,TIA-222-F,3,3,0,59.4,123.9,208.7,36,2024-06-15,False,near_structural_limit,0
+CC-TWR-755420,Self-Supporting Lattice,260,TIA-222-H,5,4,1,60.2,93.5,155.4,44,2023-06-13,True,near_structural_limit,0
+CC-TWR-706403,Self-Supporting Lattice,100,TIA-222-H,3,2,1,46.1,43.9,95.1,11,2023-10-03,True,near_structural_limit,0
+CC-TWR-139807,Self-Supporting Lattice,100,TIA-222-G,5,1,4,88.8,77.0,86.7,24,2024-05-06,False,none,0
+CC-TWR-727086,Stealth/Concealed,90,TIA-222-H,4,1,3,83.7,13.6,16.3,4,2023-12-03,True,undersold_capacity,4190.47
+CC-TWR-979269,Monopole,310,TIA-222-F,3,2,1,83.5,39.2,46.9,14,2024-06-21,False,none,0
+CC-TWR-880746,Monopole,160,TIA-222-F,4,1,3,49.9,18.7,37.5,7,2023-05-12,True,undersold_capacity,3129.41
+CC-TWR-118632,Guyed Tower,110,TIA-222-F,6,2,4,133.1,94.8,71.2,33,2024-06-02,False,none,0
+CC-TWR-861411,Monopole,340,TIA-222-H,5,2,3,52.5,50.0,95.2,13,2023-10-03,True,near_structural_limit,0
+CC-TWR-698384,Stealth/Concealed,210,TIA-222-F,5,2,3,45.9,39.4,85.8,15,2023-02-19,True,none,0
+CC-TWR-874524,Monopole,240,TIA-222-G,4,1,3,62.1,40.0,64.5,12,2023-07-16,True,none,0
+CC-TWR-234443,Self-Supporting Lattice,290,TIA-222-G,5,2,3,45.3,69.4,153.3,22,2023-12-29,True,near_structural_limit,0
+CC-TWR-827143,Stealth/Concealed,260,TIA-222-F,5,3,2,46.7,99.9,213.8,25,2024-02-28,True,near_structural_limit,0
+CC-TWR-908554,Monopole,270,TIA-222-F,5,1,4,69.8,35.4,50.8,10,2023-10-05,True,none,0
+CC-TWR-208751,Stealth/Concealed,210,TIA-222-H,4,2,2,50.5,64.8,128.3,17,2023-07-27,True,near_structural_limit,0
+CC-TWR-594580,Guyed Tower,270,TIA-222-F,6,1,5,127.6,16.0,12.6,6,2023-10-03,True,undersold_capacity,2776.66
+CC-TWR-770872,Rooftop,260,TIA-222-H,3,2,1,46.1,85.1,184.7,29,2023-12-29,True,near_structural_limit,0
+CC-TWR-986438,Monopole,250,TIA-222-G,5,2,3,77.7,71.0,91.4,24,2023-03-11,True,none,0
+CC-TWR-863187,Monopole,240,TIA-222-F,5,3,2,89.8,57.0,63.5,25,2023-10-21,True,none,0
+CC-TWR-862560,Stealth/Concealed,270,TIA-222-H,3,2,1,65.5,51.2,78.1,13,2024-04-12,False,none,0
+CC-TWR-959972,Monopole,170,TIA-222-H,5,2,3,55.0,79.6,144.8,24,2023-08-08,True,near_structural_limit,0
+CC-TWR-872519,Monopole,90,TIA-222-F,4,2,2,59.4,71.4,120.3,30,2024-11-02,False,near_structural_limit,0
+CC-TWR-214975,Guyed Tower,120,TIA-222-H,7,1,6,95.1,48.9,51.4,18,2023-07-31,True,none,0
+CC-TWR-831514,Monopole,190,TIA-222-G,3,4,0,45.4,109.2,240.7,32,2024-10-19,False,over_capacity_tenants,0
+CC-TWR-749342,Rooftop,180,TIA-222-F,4,2,2,38.5,38.8,100.6,14,2024-02-04,True,near_structural_limit,0
+CC-TWR-961957,Monopole,190,TIA-222-F,4,2,2,89.8,44.3,49.4,16,2023-08-11,True,none,0
+CC-TWR-665579,Monopole,320,TIA-222-H,5,1,4,57.1,32.9,57.7,16,2023-08-08,True,none,0
+CC-TWR-311741,Self-Supporting Lattice,220,TIA-222-F,4,1,3,73.0,30.9,42.4,9,2023-05-12,True,none,0
+CC-TWR-825309,Stealth/Concealed,210,TIA-222-F,5,3,2,68.6,46.9,68.4,15,2024-02-23,True,none,0
+CC-TWR-550418,Self-Supporting Lattice,200,TIA-222-F,5,2,3,40.0,68.9,172.2,20,2023-12-15,True,near_structural_limit,0
+CC-TWR-990649,Monopole,280,TIA-222-F,4,2,2,57.0,95.6,167.8,29,2023-07-02,True,near_structural_limit,0
+CC-TWR-251275,Monopole,140,TIA-222-F,3,3,0,78.9,62.4,79.1,23,2024-08-24,False,none,0
+CC-TWR-750810,Stealth/Concealed,310,TIA-222-G,3,2,1,43.1,38.4,89.2,13,2023-10-28,True,none,0
+CC-TWR-890170,Monopole,150,TIA-222-G,5,2,3,63.4,49.7,78.4,22,2024-07-13,False,none,0
+CC-TWR-957915,Monopole,150,TIA-222-H,5,2,3,46.8,58.3,124.6,19,2023-07-17,True,near_structural_limit,0
+CC-TWR-907788,Guyed Tower,100,TIA-222-G,5,2,3,148.8,87.8,59.0,23,2023-02-23,True,none,0
+CC-TWR-302127,Monopole,340,TIA-222-H,5,1,4,85.0,43.2,50.8,11,2024-11-17,False,none,0
+CC-TWR-550081,Self-Supporting Lattice,280,TIA-222-G,3,2,1,68.0,52.5,77.2,15,2023-01-12,True,none,0
+CC-TWR-861319,Rooftop,170,TIA-222-G,3,1,2,52.2,26.8,51.3,8,2023-03-01,True,none,0
+CC-TWR-117711,Stealth/Concealed,200,TIA-222-F,4,2,2,64.0,25.7,40.1,9,2024-12-28,False,none,0
+CC-TWR-672547,Guyed Tower,200,TIA-222-F,6,2,4,145.6,26.4,18.1,9,2024-02-27,True,undersold_capacity,3109.56
+CC-TWR-479430,Guyed Tower,100,TIA-222-G,8,1,7,109.5,27.2,24.9,8,2024-08-28,False,undersold_capacity,5070.4
+CC-TWR-965401,Monopole,270,TIA-222-G,3,3,0,72.2,73.7,102.1,20,2024-10-08,False,near_structural_limit,0
+CC-TWR-990856,Guyed Tower,240,TIA-222-H,5,1,4,99.1,30.9,31.2,12,2023-04-02,True,undersold_capacity,3958.01
+CC-TWR-941814,Guyed Tower,310,TIA-222-G,6,2,4,90.8,41.9,46.1,13,2024-05-23,False,none,0
+CC-TWR-996840,Monopole,100,TIA-222-F,4,3,1,40.5,57.5,141.9,15,2023-04-17,True,near_structural_limit,0
+CC-TWR-343118,Monopole,330,TIA-222-F,4,2,2,68.3,36.9,54.1,14,2024-01-20,True,none,0
+CC-TWR-905819,Monopole,100,TIA-222-G,3,1,2,79.1,24.3,30.7,7,2023-01-18,True,undersold_capacity,3591.38
+CC-TWR-776604,Rooftop,130,TIA-222-H,3,2,1,39.5,30.4,77.0,15,2024-12-13,False,none,0
+CC-TWR-863611,Guyed Tower,90,TIA-222-H,8,2,6,129.4,43.9,33.9,15,2024-01-10,True,undersold_capacity,2866.56
+CC-TWR-463546,Self-Supporting Lattice,240,TIA-222-G,4,0,4,55.9,0.0,0.0,0,2023-10-06,True,undersold_capacity,5469.66
+CC-TWR-896456,Self-Supporting Lattice,280,TIA-222-F,4,2,2,87.0,21.2,24.4,10,2023-05-15,True,undersold_capacity,3890.64
+CC-TWR-240718,Self-Supporting Lattice,240,TIA-222-F,4,1,3,86.4,17.5,20.3,5,2023-10-11,True,undersold_capacity,2756.03
+CC-TWR-971084,Stealth/Concealed,100,TIA-222-G,4,2,2,53.8,77.7,144.2,23,2024-10-27,False,near_structural_limit,0
+CC-TWR-977345,Guyed Tower,220,TIA-222-F,6,2,4,80.9,41.3,51.1,20,2023-01-21,True,none,0
+CC-TWR-778636,Self-Supporting Lattice,130,TIA-222-F,5,2,3,59.0,38.0,64.3,12,2024-02-28,True,none,0
+CC-TWR-478638,Guyed Tower,180,TIA-222-G,8,1,7,129.5,34.8,26.9,9,2023-08-13,True,undersold_capacity,4653.34
+CC-TWR-782141,Self-Supporting Lattice,330,TIA-222-H,5,3,2,85.6,72.4,84.5,21,2024-04-08,False,none,0
+CC-TWR-132359,Stealth/Concealed,330,TIA-222-G,4,2,2,73.9,21.6,29.2,10,2024-08-02,False,undersold_capacity,3995.33
+CC-TWR-423939,Self-Supporting Lattice,330,TIA-222-H,5,2,3,72.4,52.3,72.3,17,2024-02-27,True,none,0
+CC-TWR-665610,Monopole,190,TIA-222-H,4,5,0,89.4,114.2,127.8,40,2024-06-09,False,over_capacity_tenants,0
+CC-TWR-959959,Monopole,340,TIA-222-F,4,3,1,52.7,69.2,131.2,31,2024-05-17,False,near_structural_limit,0
+CC-TWR-972565,Self-Supporting Lattice,120,TIA-222-G,4,2,2,67.5,27.6,40.9,13,2023-09-14,True,none,0
+CC-TWR-466375,Monopole,150,TIA-222-H,3,2,1,54.2,40.7,75.1,16,2023-08-27,True,none,0
+CC-TWR-460572,Monopole,210,TIA-222-H,5,2,3,47.4,30.0,63.4,13,2023-07-14,True,none,0
+CC-TWR-480303,Rooftop,110,TIA-222-F,3,2,1,50.3,75.5,150.2,35,2023-04-24,True,near_structural_limit,0
+CC-TWR-197966,Monopole,240,TIA-222-H,4,3,1,44.6,52.5,117.7,20,2024-06-01,False,near_structural_limit,0
+CC-TWR-857997,Monopole,260,TIA-222-F,4,1,3,89.5,26.6,29.7,11,2023-06-09,True,undersold_capacity,4086.35
+CC-TWR-788049,Monopole,240,TIA-222-G,4,1,3,81.3,35.6,43.8,12,2024-12-30,False,outdated_analysis,0
+CC-TWR-280908,Monopole,340,TIA-222-G,5,3,2,41.1,99.8,242.8,26,2024-04-08,False,near_structural_limit,0
+CC-TWR-151328,Monopole,290,TIA-222-G,3,1,2,75.5,16.1,21.4,7,2024-05-15,False,undersold_capacity,3252.28
+CC-TWR-389930,Monopole,310,TIA-222-F,5,1,4,81.4,14.1,17.3,6,2024-05-03,False,undersold_capacity,3458.89
+CC-TWR-791567,Stealth/Concealed,120,TIA-222-G,4,3,1,78.8,93.2,118.4,27,2024-04-14,False,near_structural_limit,0
+CC-TWR-561477,Rooftop,190,TIA-222-F,3,4,0,32.3,99.9,308.9,41,2023-11-19,True,over_capacity_tenants,0
+CC-TWR-213355,Stealth/Concealed,230,TIA-222-F,3,1,2,57.4,40.8,71.1,13,2024-11-16,False,none,0
+CC-TWR-579404,Rooftop,110,TIA-222-H,3,2,1,59.4,30.1,50.6,14,2023-12-05,True,none,0
+CC-TWR-322423,Stealth/Concealed,190,TIA-222-F,5,2,3,60.1,46.3,77.0,23,2023-12-10,True,none,0
+CC-TWR-497562,Stealth/Concealed,290,TIA-222-F,3,2,1,51.3,70.6,137.7,23,2023-01-01,True,near_structural_limit,0
+CC-TWR-871476,Rooftop,250,TIA-222-F,4,1,3,56.5,31.9,56.4,12,2024-08-12,False,none,0
+CC-TWR-211425,Monopole,230,TIA-222-F,4,1,3,65.7,42.2,64.3,12,2023-09-12,True,none,0
+CC-TWR-288503,Stealth/Concealed,320,TIA-222-G,5,1,4,75.7,24.0,31.8,9,2024-03-13,True,undersold_capacity,3813.43
+CC-TWR-841666,Monopole,120,TIA-222-F,5,2,3,68.3,46.7,68.3,13,2023-05-03,True,none,0
+CC-TWR-502810,Monopole,270,TIA-222-G,4,2,2,61.5,61.9,100.6,22,2023-10-31,True,near_structural_limit,0
+CC-TWR-154615,Stealth/Concealed,190,TIA-222-H,4,1,3,65.3,76.9,117.7,21,2023-08-09,True,near_structural_limit,0
+CC-TWR-579318,Self-Supporting Lattice,100,TIA-222-F,5,2,3,78.8,29.9,37.9,14,2024-04-09,False,undersold_capacity,2977.34
+CC-TWR-827369,Rooftop,230,TIA-222-F,3,2,1,54.6,42.7,78.2,12,2023-12-28,True,none,0
+CC-TWR-888734,Rooftop,190,TIA-222-F,2,1,1,56.8,28.7,50.5,8,2023-06-08,True,none,0
+CC-TWR-611945,Rooftop,150,TIA-222-G,3,4,0,32.3,92.5,286.4,31,2024-08-28,False,over_capacity_tenants,0
+CC-TWR-387330,Stealth/Concealed,100,TIA-222-F,4,1,3,78.1,11.0,14.1,3,2023-01-02,True,undersold_capacity,2762.24
+CC-TWR-829066,Self-Supporting Lattice,140,TIA-222-F,5,1,4,83.7,14.2,17.0,7,2023-11-15,True,undersold_capacity,5455.98
+CC-TWR-963333,Guyed Tower,260,TIA-222-F,5,1,4,139.1,40.5,29.1,11,2023-04-24,True,undersold_capacity,4759.03
+CC-TWR-887443,Guyed Tower,320,TIA-222-H,7,1,6,106.7,11.7,11.0,3,2024-08-21,False,undersold_capacity,5138.1
+CC-TWR-773870,Rooftop,330,TIA-222-F,3,3,0,42.9,60.3,140.7,24,2023-02-13,True,near_structural_limit,0
+CC-TWR-560959,Monopole,210,TIA-222-F,3,1,2,88.5,68.4,77.4,18,2023-01-25,True,none,0
+CC-TWR-753534,Monopole,300,TIA-222-F,4,1,3,48.1,13.4,27.8,4,2024-02-08,True,undersold_capacity,3686.99
+CC-TWR-132653,Self-Supporting Lattice,120,TIA-222-H,3,1,2,60.6,41.1,67.8,16,2023-03-19,True,none,0
+CC-TWR-582662,Monopole,190,TIA-222-G,5,1,4,49.4,18.6,37.6,7,2024-11-03,False,undersold_capacity,5791.36
+CC-TWR-558339,Monopole,200,TIA-222-H,5,1,4,45.7,14.4,31.6,5,2024-02-11,True,undersold_capacity,5491.59
+CC-TWR-701253,Monopole,200,TIA-222-F,5,1,4,67.1,24.3,36.3,7,2023-01-16,True,undersold_capacity,4749.49
+CC-TWR-493663,Guyed Tower,210,TIA-222-G,7,3,4,105.2,96.1,91.4,35,2023-09-28,True,none,0
+CC-TWR-823846,Monopole,160,TIA-222-G,3,2,1,75.4,49.4,65.5,19,2023-04-25,True,none,0
+CC-TWR-644719,Self-Supporting Lattice,110,TIA-222-F,5,1,4,74.7,39.7,53.1,11,2024-12-04,False,none,0
+CC-TWR-397809,Guyed Tower,140,TIA-222-G,7,1,6,136.1,49.4,36.3,18,2024-12-24,False,undersold_capacity,4738.12
+CC-TWR-478356,Self-Supporting Lattice,80,TIA-222-F,3,2,1,65.9,40.9,62.0,13,2024-10-04,False,none,0
+CC-TWR-915573,Self-Supporting Lattice,340,TIA-222-H,5,2,3,74.5,30.3,40.6,12,2024-07-14,False,none,0
+CC-TWR-211486,Stealth/Concealed,90,TIA-222-H,3,1,2,41.8,24.8,59.3,7,2024-03-22,False,outdated_analysis,0
+CC-TWR-312616,Monopole,340,TIA-222-G,4,1,3,84.8,6.6,7.8,3,2023-07-18,True,undersold_capacity,5550.29
+CC-TWR-985893,Monopole,190,TIA-222-H,3,1,2,41.0,51.1,124.4,14,2024-12-12,False,near_structural_limit,0
+CC-TWR-726111,Self-Supporting Lattice,250,TIA-222-F,4,1,3,86.0,18.8,21.9,9,2024-03-03,True,undersold_capacity,4151.58
+CC-TWR-934042,Rooftop,310,TIA-222-H,3,2,1,41.2,62.9,152.6,16,2023-10-09,True,near_structural_limit,0
+CC-TWR-766275,Stealth/Concealed,110,TIA-222-G,3,2,1,89.6,35.6,39.7,17,2024-05-12,False,none,0
+CC-TWR-398761,Monopole,320,TIA-222-H,3,2,1,51.7,33.8,65.4,14,2024-09-19,False,none,0
+CC-TWR-358207,Stealth/Concealed,150,TIA-222-G,4,2,2,51.0,38.2,74.9,14,2024-03-08,True,none,0
+CC-TWR-990598,Monopole,150,TIA-222-H,4,3,1,74.9,58.5,78.1,22,2024-09-30,False,none,0
+CC-TWR-483041,Stealth/Concealed,260,TIA-222-F,4,2,2,74.0,37.2,50.3,15,2024-09-04,False,none,0
+CC-TWR-156213,Stealth/Concealed,120,TIA-222-G,3,1,2,43.7,20.6,47.0,10,2024-11-15,False,none,0
+CC-TWR-727354,Rooftop,250,TIA-222-H,2,1,1,38.0,18.8,49.5,6,2023-05-23,True,none,0
+CC-TWR-575435,Monopole,280,TIA-222-G,4,1,3,62.8,22.1,35.2,9,2024-04-23,False,undersold_capacity,3691.24
+CC-TWR-930117,Self-Supporting Lattice,180,TIA-222-H,3,2,1,43.8,40.4,92.2,13,2024-07-24,False,none,0
+CC-TWR-637179,Monopole,170,TIA-222-F,3,0,3,63.3,0.0,0.0,0,2024-06-16,False,undersold_capacity,3779.23
+CC-TWR-922157,Self-Supporting Lattice,330,TIA-222-F,5,2,3,71.5,40.0,55.9,16,2024-03-10,True,none,0
+CC-TWR-502491,Monopole,320,TIA-222-G,4,2,2,54.8,46.9,85.6,18,2023-03-21,True,none,0
+CC-TWR-626560,Monopole,80,TIA-222-G,5,1,4,88.3,19.8,22.4,6,2024-06-11,False,undersold_capacity,4263.22
+CC-TWR-950823,Self-Supporting Lattice,200,TIA-222-G,3,1,2,52.7,39.0,74.0,11,2024-06-28,False,none,0
+CC-TWR-237962,Self-Supporting Lattice,140,TIA-222-H,3,3,0,79.9,63.5,79.4,26,2023-10-04,True,none,0
+CC-TWR-694916,Self-Supporting Lattice,100,TIA-222-H,3,2,1,43.8,22.5,51.4,10,2023-04-02,True,none,0
+CC-TWR-936433,Self-Supporting Lattice,170,TIA-222-G,3,1,2,74.5,28.6,38.4,12,2024-06-05,False,undersold_capacity,3481.75
+CC-TWR-711046,Self-Supporting Lattice,290,TIA-222-H,3,2,1,52.8,27.5,52.0,13,2024-01-29,True,none,0
+CC-TWR-291961,Monopole,290,TIA-222-F,3,3,0,52.3,97.7,186.7,28,2023-06-13,True,near_structural_limit,0
+CC-TWR-946561,Stealth/Concealed,100,TIA-222-F,3,2,1,42.3,36.5,86.1,14,2024-06-07,False,none,0
+CC-TWR-313701,Monopole,250,TIA-222-G,4,0,4,77.3,0.0,0.0,0,2023-09-15,True,undersold_capacity,4065.45
+CC-TWR-902784,Monopole,260,TIA-222-F,3,2,1,60.0,80.4,134.0,28,2024-12-30,False,near_structural_limit,0
+CC-TWR-426711,Guyed Tower,330,TIA-222-G,6,2,4,140.1,69.6,49.6,18,2024-02-05,True,none,0
+CC-TWR-660081,Guyed Tower,120,TIA-222-F,8,1,7,135.0,12.4,9.2,6,2024-11-22,False,undersold_capacity,4292.21
+CC-TWR-586288,Self-Supporting Lattice,110,TIA-222-G,5,1,4,87.6,18.0,20.5,5,2023-03-22,True,undersold_capacity,4760.7
+CC-TWR-372315,Guyed Tower,130,TIA-222-H,7,2,5,99.4,80.4,80.9,21,2024-08-29,False,none,0
+CC-TWR-555589,Monopole,110,TIA-222-H,3,1,2,74.0,30.8,41.7,9,2023-01-28,True,none,0
+CC-TWR-448354,Self-Supporting Lattice,340,TIA-222-G,3,1,2,62.0,35.5,57.4,10,2023-09-01,True,none,0
+CC-TWR-198867,Monopole,90,TIA-222-F,5,1,4,71.8,30.5,42.5,9,2024-07-12,False,none,0
+CC-TWR-830302,Self-Supporting Lattice,290,TIA-222-F,3,3,0,68.3,57.2,83.8,24,2023-11-07,True,none,0
+CC-TWR-205065,Stealth/Concealed,210,TIA-222-F,5,1,4,80.0,25.3,31.6,11,2023-12-24,True,undersold_capacity,3235.0
+CC-TWR-395459,Guyed Tower,320,TIA-222-G,6,1,5,147.9,9.3,6.3,3,2023-01-07,True,undersold_capacity,4675.01
+CC-TWR-327999,Guyed Tower,310,TIA-222-G,5,1,4,95.1,27.8,29.2,10,2023-03-02,True,undersold_capacity,4880.21
+CC-TWR-916990,Monopole,290,TIA-222-H,5,1,4,88.6,28.1,31.7,8,2023-06-04,True,undersold_capacity,3738.0
+CC-TWR-912510,Stealth/Concealed,290,TIA-222-H,3,2,1,72.1,81.9,113.5,22,2023-11-21,True,near_structural_limit,0
+CC-TWR-713762,Monopole,210,TIA-222-F,4,1,3,60.4,29.1,48.3,8,2024-09-05,False,none,0
+CC-TWR-734565,Monopole,320,TIA-222-G,5,1,4,64.3,26.5,41.2,12,2024-08-04,False,none,0
+CC-TWR-327408,Monopole,260,TIA-222-F,5,1,4,71.8,29.4,40.9,8,2024-04-23,False,none,0
+CC-TWR-685549,Stealth/Concealed,310,TIA-222-G,5,2,3,86.3,61.8,71.6,21,2023-12-08,True,none,0
+CC-TWR-775960,Monopole,320,TIA-222-H,4,2,2,43.9,40.1,91.2,11,2024-06-15,False,none,0
+CC-TWR-208214,Rooftop,180,TIA-222-G,3,2,1,47.9,77.1,160.9,20,2024-10-11,False,near_structural_limit,0
+CC-TWR-105919,Self-Supporting Lattice,180,TIA-222-H,4,2,2,53.5,73.7,137.8,19,2023-04-04,True,near_structural_limit,0
+CC-TWR-875753,Self-Supporting Lattice,280,TIA-222-H,4,1,3,50.0,23.0,46.0,6,2023-11-08,True,none,0
+CC-TWR-823255,Guyed Tower,110,TIA-222-H,6,1,5,81.1,20.7,25.5,8,2023-03-14,True,undersold_capacity,4911.34
+CC-TWR-805034,Guyed Tower,120,TIA-222-F,6,1,5,134.8,49.9,37.0,14,2024-11-01,False,undersold_capacity,3839.48
+CC-TWR-283188,Self-Supporting Lattice,90,TIA-222-H,5,1,4,60.8,56.2,92.5,18,2023-12-25,True,none,0
+CC-TWR-207197,Stealth/Concealed,120,TIA-222-G,4,1,3,83.7,28.6,34.2,10,2024-05-13,False,undersold_capacity,4075.7
+CC-TWR-855053,Monopole,210,TIA-222-H,3,2,1,71.8,44.2,61.5,16,2024-01-25,True,none,0
+CC-TWR-488571,Self-Supporting Lattice,100,TIA-222-H,3,3,0,77.6,73.1,94.2,28,2023-05-09,True,none,0
+CC-TWR-183958,Self-Supporting Lattice,180,TIA-222-F,4,1,3,69.2,28.3,40.9,11,2024-05-07,False,none,0
+CC-TWR-629903,Monopole,270,TIA-222-G,3,1,2,70.5,44.4,63.0,12,2024-07-13,False,none,0
+CC-TWR-910075,Self-Supporting Lattice,200,TIA-222-H,5,1,4,63.7,17.0,26.7,6,2024-09-06,False,undersold_capacity,4000.25
+CC-TWR-184002,Self-Supporting Lattice,130,TIA-222-H,5,2,3,55.0,55.6,101.1,17,2024-08-04,False,near_structural_limit,0
+CC-TWR-499226,Monopole,130,TIA-222-F,4,2,2,86.4,32.3,37.4,11,2023-03-07,True,undersold_capacity,2738.2
+CC-TWR-412856,Self-Supporting Lattice,220,TIA-222-F,3,2,1,57.8,27.8,48.1,12,2024-05-17,False,none,0
+CC-TWR-741079,Monopole,150,TIA-222-F,4,2,2,47.8,26.5,55.5,7,2023-02-04,True,none,0
+CC-TWR-324993,Guyed Tower,270,TIA-222-G,6,3,3,97.5,88.5,90.8,42,2024-07-17,False,none,0
+CC-TWR-278852,Monopole,150,TIA-222-F,5,2,3,83.7,60.6,72.4,18,2024-03-18,False,none,0
+CC-TWR-839945,Monopole,210,TIA-222-F,3,2,1,42.2,57.2,135.6,23,2023-05-22,True,near_structural_limit,0
+CC-TWR-121322,Rooftop,200,TIA-222-G,2,1,1,32.0,114.7,358.0,32,2023-03-05,True,near_structural_limit,0
+CC-TWR-185569,Self-Supporting Lattice,190,TIA-222-H,4,3,1,59.2,65.4,110.5,22,2023-08-28,True,near_structural_limit,0
+CC-TWR-631958,Monopole,170,TIA-222-G,3,1,2,59.4,21.0,35.3,9,2024-02-14,True,undersold_capacity,4012.02
+CC-TWR-384434,Self-Supporting Lattice,340,TIA-222-H,4,1,3,82.8,46.9,56.6,12,2024-11-13,False,none,0
+CC-TWR-949363,Monopole,160,TIA-222-G,3,1,2,57.5,54.5,94.7,15,2023-02-26,True,none,0
+CC-TWR-616554,Monopole,110,TIA-222-G,4,1,3,61.6,28.5,46.3,10,2023-12-01,True,outdated_analysis,0
+CC-TWR-999695,Monopole,240,TIA-222-G,4,1,3,83.0,15.6,18.8,4,2024-10-10,False,undersold_capacity,3751.72
+CC-TWR-130353,Stealth/Concealed,90,TIA-222-G,5,3,2,85.6,124.5,145.5,40,2023-02-10,True,near_structural_limit,0
+CC-TWR-784733,Monopole,170,TIA-222-H,4,2,2,48.5,44.4,91.7,12,2023-09-27,True,none,0
+CC-TWR-649300,Stealth/Concealed,100,TIA-222-G,4,1,3,58.9,42.8,72.7,12,2024-02-03,True,none,0
+CC-TWR-855185,Monopole,180,TIA-222-H,5,1,4,79.7,12.6,15.8,4,2024-01-01,True,undersold_capacity,4229.57
+CC-TWR-245308,Self-Supporting Lattice,260,TIA-222-G,3,3,0,48.2,126.2,261.7,39,2023-05-08,True,near_structural_limit,0
+CC-TWR-568449,Monopole,240,TIA-222-H,5,3,2,77.5,84.0,108.5,30,2024-09-23,False,near_structural_limit,0
+CC-TWR-416822,Self-Supporting Lattice,290,TIA-222-G,4,2,2,69.7,43.9,62.9,11,2024-01-24,True,none,0
+CC-TWR-271456,Self-Supporting Lattice,340,TIA-222-H,4,2,2,82.5,60.0,72.7,18,2024-10-12,False,none,0
+CC-TWR-256175,Guyed Tower,270,TIA-222-F,7,1,6,125.0,14.8,11.9,4,2024-02-14,True,undersold_capacity,3766.6
+CC-TWR-898169,Stealth/Concealed,320,TIA-222-F,4,1,3,74.1,58.5,79.0,19,2024-12-22,False,none,0
+CC-TWR-172187,Stealth/Concealed,150,TIA-222-F,3,2,1,59.2,47.4,80.1,15,2023-10-03,True,none,0
+CC-TWR-125755,Monopole,230,TIA-222-G,5,1,4,75.9,28.4,37.5,10,2023-09-14,True,undersold_capacity,4264.23
+CC-TWR-414546,Monopole,290,TIA-222-G,4,2,2,70.9,45.7,64.5,19,2023-02-09,True,none,0
+CC-TWR-453487,Monopole,330,TIA-222-H,5,2,3,61.8,35.2,56.9,17,2024-08-13,False,none,0
+CC-TWR-243006,Monopole,310,TIA-222-F,4,3,1,68.6,73.6,107.4,20,2024-05-19,False,near_structural_limit,0
+CC-TWR-185544,Monopole,160,TIA-222-H,3,2,1,60.2,38.3,63.6,17,2023-07-12,True,none,0
+CC-TWR-340062,Monopole,100,TIA-222-G,5,1,4,87.3,34.2,39.2,9,2023-04-03,True,undersold_capacity,4356.16
+CC-TWR-825686,Stealth/Concealed,230,TIA-222-H,5,2,3,76.9,59.1,76.9,22,2024-04-07,False,none,0
+CC-TWR-460663,Rooftop,270,TIA-222-G,4,3,1,53.3,103.6,194.6,32,2024-07-20,False,near_structural_limit,0
+CC-TWR-681456,Stealth/Concealed,130,TIA-222-H,3,2,1,86.5,53.0,61.3,14,2024-06-16,False,none,0
+CC-TWR-521126,Monopole,210,TIA-222-G,4,3,1,74.2,96.4,129.9,31,2024-02-21,True,near_structural_limit,0
+CC-TWR-372427,Monopole,120,TIA-222-H,3,1,2,87.8,28.0,31.9,10,2023-04-20,True,undersold_capacity,5124.95
+CC-TWR-883132,Monopole,240,TIA-222-H,5,2,3,40.3,45.0,111.6,14,2024-09-19,False,near_structural_limit,0
+CC-TWR-271276,Monopole,90,TIA-222-G,5,2,3,82.7,16.0,19.4,6,2023-04-13,True,undersold_capacity,2972.61
+CC-TWR-693297,Monopole,290,TIA-222-F,5,1,4,44.3,55.1,124.2,15,2023-09-27,True,near_structural_limit,0
+CC-TWR-584714,Monopole,200,TIA-222-H,3,2,1,68.4,74.2,108.5,24,2024-02-03,True,near_structural_limit,0
+CC-TWR-488539,Self-Supporting Lattice,240,TIA-222-H,3,2,1,76.6,66.2,86.5,18,2024-05-30,False,outdated_analysis,0
+CC-TWR-214119,Monopole,130,TIA-222-F,4,1,3,54.0,7.6,14.1,3,2023-06-06,True,undersold_capacity,4944.51
+CC-TWR-251716,Monopole,120,TIA-222-F,3,1,2,72.3,30.2,41.7,10,2024-03-02,True,none,0
+CC-TWR-741390,Monopole,330,TIA-222-H,3,1,2,87.3,16.1,18.5,8,2024-09-08,False,undersold_capacity,5062.52
+CC-TWR-802448,Monopole,310,TIA-222-F,3,3,0,59.6,73.9,124.2,30,2023-06-28,True,near_structural_limit,0
+CC-TWR-512040,Monopole,300,TIA-222-F,4,0,4,54.7,0.0,0.0,0,2024-06-07,False,undersold_capacity,3747.37
+CC-TWR-792282,Stealth/Concealed,240,TIA-222-G,3,0,3,87.4,0.0,0.0,0,2024-01-04,True,undersold_capacity,4275.15
+CC-TWR-595036,Monopole,280,TIA-222-H,3,1,2,52.8,29.9,56.6,12,2024-01-16,True,outdated_analysis,0
+CC-TWR-272529,Monopole,180,TIA-222-H,3,2,1,60.6,18.5,30.5,7,2024-01-10,True,none,0
+CC-TWR-954441,Self-Supporting Lattice,80,TIA-222-G,3,3,0,88.4,70.9,80.3,25,2024-12-12,False,none,0
+CC-TWR-906325,Monopole,120,TIA-222-G,5,1,4,72.4,23.6,32.6,8,2024-01-29,True,undersold_capacity,4156.6
+CC-TWR-500209,Self-Supporting Lattice,240,TIA-222-H,4,1,3,59.5,24.6,41.4,8,2024-03-29,False,none,0
+CC-TWR-499974,Monopole,190,TIA-222-G,3,2,1,54.9,36.9,67.2,10,2024-02-21,True,none,0
+CC-TWR-761532,Guyed Tower,280,TIA-222-H,5,2,3,122.0,62.2,51.0,16,2024-08-11,False,none,0
+CC-TWR-952646,Rooftop,330,TIA-222-G,4,1,3,59.2,22.5,38.1,7,2023-06-06,True,undersold_capacity,5324.74
+CC-TWR-628689,Stealth/Concealed,120,TIA-222-F,5,1,4,55.0,35.5,64.6,12,2023-02-13,True,none,0
+CC-TWR-992819,Rooftop,240,TIA-222-G,3,2,1,37.3,51.0,136.8,13,2023-10-23,True,near_structural_limit,0
+CC-TWR-675512,Monopole,220,TIA-222-F,3,2,1,77.4,31.4,40.5,8,2024-12-05,False,none,0
+CC-TWR-967823,Self-Supporting Lattice,170,TIA-222-F,5,2,3,55.4,47.0,84.8,16,2024-04-10,False,none,0
+CC-TWR-360909,Monopole,150,TIA-222-G,3,2,1,82.5,52.3,63.4,14,2023-09-08,True,none,0
+CC-TWR-781113,Self-Supporting Lattice,160,TIA-222-F,5,1,4,57.6,12.8,22.3,4,2023-10-22,True,undersold_capacity,5020.55
+CC-TWR-143195,Monopole,340,TIA-222-F,5,1,4,61.5,21.7,35.2,6,2024-10-25,False,undersold_capacity,2570.21
+CC-TWR-143802,Guyed Tower,80,TIA-222-F,5,0,5,81.7,0.0,0.0,0,2023-05-05,True,undersold_capacity,2646.0
+CC-TWR-749887,Monopole,240,TIA-222-H,3,1,2,68.7,22.4,32.6,7,2024-06-09,False,undersold_capacity,5077.6
+CC-TWR-726822,Monopole,290,TIA-222-H,5,1,4,43.4,22.2,51.2,7,2024-03-19,False,none,0
+CC-TWR-577079,Self-Supporting Lattice,310,TIA-222-H,5,1,4,89.0,59.8,67.3,15,2024-03-01,True,none,0
+CC-TWR-865470,Stealth/Concealed,200,TIA-222-F,5,2,3,80.5,27.9,34.7,7,2024-02-23,True,undersold_capacity,5701.37
+CC-TWR-660069,Monopole,80,TIA-222-G,4,1,3,73.3,8.5,11.6,3,2023-05-10,True,undersold_capacity,3465.97
+CC-TWR-901676,Monopole,330,TIA-222-F,4,0,4,73.2,0.0,0.0,0,2024-05-14,False,undersold_capacity,5968.23
+CC-TWR-579798,Self-Supporting Lattice,120,TIA-222-F,4,1,3,66.6,10.3,15.5,4,2024-03-03,True,undersold_capacity,4914.26
+CC-TWR-501936,Stealth/Concealed,80,TIA-222-G,4,1,3,71.9,27.3,37.9,9,2024-07-19,False,undersold_capacity,2526.98
+CC-TWR-874568,Monopole,310,TIA-222-H,5,1,4,42.6,22.4,52.6,6,2023-07-22,True,none,0
+CC-TWR-367729,Monopole,290,TIA-222-G,4,1,3,44.3,37.1,83.8,11,2024-07-22,False,none,0
+CC-TWR-571404,Self-Supporting Lattice,220,TIA-222-H,5,3,2,40.5,73.5,181.7,29,2024-03-10,True,near_structural_limit,0
+CC-TWR-534152,Monopole,210,TIA-222-G,4,3,1,82.3,74.9,91.0,25,2024-08-10,False,none,0
+CC-TWR-688678,Self-Supporting Lattice,180,TIA-222-H,3,2,1,58.8,46.6,79.4,14,2024-08-09,False,none,0
+CC-TWR-194458,Monopole,320,TIA-222-F,4,1,3,62.0,24.1,38.8,8,2024-10-05,False,undersold_capacity,5961.3
+CC-TWR-596171,Self-Supporting Lattice,250,TIA-222-H,3,1,2,67.8,21.2,31.2,8,2023-06-19,True,undersold_capacity,3359.17
+CC-TWR-373791,Monopole,130,TIA-222-G,4,1,3,69.1,21.9,31.7,9,2023-05-24,True,undersold_capacity,5292.51
+CC-TWR-357657,Guyed Tower,240,TIA-222-G,7,2,5,145.6,42.3,29.1,17,2023-01-30,True,undersold_capacity,5540.82
+CC-TWR-323508,Stealth/Concealed,240,TIA-222-F,4,1,3,40.3,25.0,62.1,10,2024-09-27,False,none,0
+CC-TWR-964226,Rooftop,220,TIA-222-F,4,2,2,49.6,58.1,117.1,16,2023-03-10,True,near_structural_limit,0
+CC-TWR-397005,Self-Supporting Lattice,290,TIA-222-H,4,2,2,70.7,38.9,55.0,13,2024-07-27,False,none,0
+CC-TWR-403915,Stealth/Concealed,330,TIA-222-G,3,1,2,67.8,70.4,103.9,18,2023-01-10,True,near_structural_limit,0
+CC-TWR-230679,Self-Supporting Lattice,310,TIA-222-G,4,1,3,65.7,12.5,19.0,6,2024-12-05,False,undersold_capacity,5333.29
+CC-TWR-841521,Guyed Tower,120,TIA-222-F,6,3,3,125.4,90.8,72.4,36,2024-05-28,False,none,0
+CC-TWR-667776,Monopole,90,TIA-222-H,3,1,2,87.8,32.0,36.4,8,2024-04-07,False,undersold_capacity,4364.69
+CC-TWR-570735,Rooftop,150,TIA-222-F,3,1,2,54.1,6.4,11.8,3,2023-02-06,True,undersold_capacity,4386.24
+CC-TWR-109909,Monopole,300,TIA-222-F,5,2,3,63.6,39.8,62.6,14,2023-12-11,True,none,0
+CC-TWR-752966,Monopole,150,TIA-222-H,3,1,2,63.0,30.7,48.7,10,2023-01-10,True,none,0
+CC-TWR-488028,Self-Supporting Lattice,170,TIA-222-F,4,1,3,49.4,23.4,47.4,10,2023-04-12,True,outdated_analysis,0
+CC-TWR-254506,Guyed Tower,340,TIA-222-G,7,1,6,88.5,15.5,17.5,4,2023-06-14,True,undersold_capacity,5082.53
+CC-TWR-159354,Stealth/Concealed,140,TIA-222-F,5,1,4,78.0,10.3,13.2,3,2024-07-16,False,undersold_capacity,4639.59
+CC-TWR-942946,Self-Supporting Lattice,330,TIA-222-H,4,2,2,43.1,55.8,129.7,15,2024-08-08,False,near_structural_limit,0
+CC-TWR-218881,Monopole,200,TIA-222-H,4,1,3,89.8,42.5,47.4,12,2023-07-22,True,none,0
+CC-TWR-174852,Monopole,250,TIA-222-G,5,1,4,78.3,9.4,12.0,3,2023-04-23,True,undersold_capacity,5876.59
+CC-TWR-530859,Monopole,80,TIA-222-H,3,0,3,87.0,0.0,0.0,0,2023-09-01,True,undersold_capacity,5835.11
+CC-TWR-306854,Self-Supporting Lattice,130,TIA-222-F,5,2,3,46.8,67.1,143.3,20,2023-07-01,True,near_structural_limit,0
+CC-TWR-511981,Self-Supporting Lattice,140,TIA-222-G,4,1,3,86.1,12.2,14.2,5,2024-02-09,True,undersold_capacity,3705.46
+CC-TWR-150126,Stealth/Concealed,280,TIA-222-H,3,2,1,58.8,59.9,101.9,16,2024-12-28,False,near_structural_limit,0
+CC-TWR-375097,Guyed Tower,290,TIA-222-G,7,2,5,129.3,37.5,29.0,15,2024-10-11,False,undersold_capacity,4089.88
+CC-TWR-437237,Self-Supporting Lattice,320,TIA-222-G,3,1,2,82.2,19.1,23.3,8,2024-03-02,True,undersold_capacity,4406.66
+CC-TWR-159532,Monopole,330,TIA-222-F,5,1,4,68.8,24.1,35.0,9,2024-01-04,True,undersold_capacity,3173.71
+CC-TWR-622987,Guyed Tower,170,TIA-222-H,8,1,7,82.0,21.1,25.7,10,2024-02-02,True,undersold_capacity,4552.16
+CC-TWR-988319,Stealth/Concealed,310,TIA-222-H,4,3,1,42.0,61.0,145.2,20,2024-06-07,False,near_structural_limit,0
+CC-TWR-825916,Rooftop,260,TIA-222-G,4,2,2,43.7,60.0,137.2,18,2024-03-18,False,near_structural_limit,0
+CC-TWR-880550,Guyed Tower,130,TIA-222-H,8,2,6,131.7,43.6,33.1,18,2023-02-27,True,undersold_capacity,5493.4
+CC-TWR-324729,Self-Supporting Lattice,150,TIA-222-F,5,0,5,62.4,0.0,0.0,0,2024-12-10,False,undersold_capacity,4566.99
+CC-TWR-238353,Monopole,240,TIA-222-H,3,2,1,57.4,59.9,104.4,21,2023-08-21,True,near_structural_limit,0
+CC-TWR-895667,Guyed Tower,330,TIA-222-G,5,2,3,85.0,61.3,72.1,22,2023-08-18,True,none,0
+CC-TWR-167348,Monopole,210,TIA-222-F,5,2,3,80.7,32.7,40.5,10,2023-10-17,True,none,0
+CC-TWR-857168,Guyed Tower,310,TIA-222-F,7,0,7,97.8,0.0,0.0,0,2023-11-15,True,undersold_capacity,2632.63
+CC-TWR-489244,Guyed Tower,250,TIA-222-H,5,1,4,121.6,24.2,19.9,7,2024-03-30,False,undersold_capacity,4796.65
+CC-TWR-431246,Rooftop,210,TIA-222-F,4,1,3,54.9,36.5,66.5,10,2023-09-24,True,none,0
+CC-TWR-583100,Monopole,260,TIA-222-H,5,1,4,72.3,19.4,26.8,8,2024-12-19,False,undersold_capacity,4178.62
+CC-TWR-117538,Self-Supporting Lattice,240,TIA-222-H,4,1,3,59.1,18.0,30.5,6,2023-06-06,True,undersold_capacity,4744.14
+CC-TWR-772642,Monopole,240,TIA-222-G,3,2,1,72.8,44.6,61.2,12,2024-10-11,False,none,0
+CC-TWR-733561,Monopole,80,TIA-222-F,3,1,2,80.0,37.7,47.2,10,2023-09-12,True,outdated_analysis,0
+CC-TWR-275715,Stealth/Concealed,280,TIA-222-F,3,1,2,49.3,17.4,35.2,5,2023-02-18,True,undersold_capacity,2967.28
+CC-TWR-749468,Stealth/Concealed,100,TIA-222-G,4,1,3,72.0,19.9,27.6,9,2024-11-14,False,undersold_capacity,5447.21
+CC-TWR-436318,Self-Supporting Lattice,190,TIA-222-G,4,1,3,87.4,31.7,36.2,12,2023-04-09,True,undersold_capacity,5763.05
+CC-TWR-794663,Monopole,240,TIA-222-F,5,2,3,40.3,29.0,71.9,12,2023-09-13,True,none,0
+CC-TWR-784488,Self-Supporting Lattice,270,TIA-222-H,4,1,3,60.3,29.8,49.4,11,2024-03-19,False,none,0
+CC-TWR-443254,Monopole,140,TIA-222-F,5,1,4,72.8,20.7,28.4,6,2023-07-13,True,undersold_capacity,2678.75
+CC-TWR-178957,Self-Supporting Lattice,120,TIA-222-F,3,1,2,83.2,9.0,10.9,3,2024-01-29,True,undersold_capacity,4252.79
+CC-TWR-701581,Guyed Tower,160,TIA-222-H,7,2,5,99.5,47.0,47.2,12,2024-03-02,True,none,0
+CC-TWR-388016,Monopole,260,TIA-222-F,4,1,3,54.6,22.6,41.4,6,2023-04-13,True,none,0
+CC-TWR-921533,Stealth/Concealed,300,TIA-222-H,5,2,3,58.4,32.2,55.2,15,2024-04-27,False,none,0
+CC-TWR-841635,Stealth/Concealed,200,TIA-222-H,3,1,2,88.5,20.5,23.1,10,2024-08-21,False,undersold_capacity,4849.13
+CC-TWR-869649,Self-Supporting Lattice,300,TIA-222-G,5,1,4,79.5,21.7,27.3,9,2023-06-22,True,undersold_capacity,5465.27
+CC-TWR-735388,Monopole,300,TIA-222-G,5,1,4,47.0,19.2,40.9,8,2023-05-25,True,none,0
+CC-TWR-572387,Self-Supporting Lattice,300,TIA-222-F,3,1,2,82.6,24.3,29.4,10,2023-10-10,True,undersold_capacity,4953.6
+CC-TWR-646428,Rooftop,230,TIA-222-G,4,1,3,58.4,24.5,42.0,9,2024-11-09,False,none,0
+CC-TWR-416503,Monopole,80,TIA-222-G,4,1,3,50.9,27.7,54.3,12,2024-12-31,False,none,0
+CC-TWR-643323,Self-Supporting Lattice,170,TIA-222-F,5,2,3,48.3,63.4,131.2,21,2024-02-14,True,near_structural_limit,0
+CC-TWR-378258,Monopole,90,TIA-222-H,5,2,3,53.4,22.2,41.6,8,2024-10-26,False,none,0
+CC-TWR-620226,Monopole,80,TIA-222-H,5,2,3,46.7,77.6,166.0,20,2024-09-01,False,near_structural_limit,0
+CC-TWR-193035,Monopole,340,TIA-222-G,4,2,2,77.7,39.7,51.0,14,2024-03-17,False,none,0
+CC-TWR-846247,Self-Supporting Lattice,330,TIA-222-H,5,2,3,78.3,26.1,33.3,11,2024-11-14,False,undersold_capacity,4787.61
+CC-TWR-179184,Self-Supporting Lattice,280,TIA-222-G,4,1,3,75.9,30.5,40.2,11,2023-08-26,True,none,0
+CC-TWR-153266,Monopole,100,TIA-222-G,4,1,3,53.3,22.0,41.3,7,2023-05-14,True,none,0
+CC-TWR-907455,Self-Supporting Lattice,120,TIA-222-F,5,1,4,40.6,13.3,32.7,6,2024-04-10,False,undersold_capacity,4291.18
+CC-TWR-358494,Monopole,160,TIA-222-F,5,1,4,67.4,12.5,18.5,4,2024-06-23,False,undersold_capacity,4851.57
+CC-TWR-628313,Stealth/Concealed,150,TIA-222-F,3,1,2,66.6,25.7,38.5,10,2024-11-25,False,undersold_capacity,3684.51
+CC-TWR-253347,Monopole,300,TIA-222-H,4,2,2,85.3,39.2,46.0,14,2024-12-08,False,none,0
+CC-TWR-634473,Self-Supporting Lattice,250,TIA-222-G,4,1,3,71.7,9.0,12.5,3,2023-12-19,True,undersold_capacity,4209.89
+CC-TWR-892170,Self-Supporting Lattice,230,TIA-222-G,5,1,4,63.1,18.7,29.6,7,2024-09-16,False,undersold_capacity,5858.15
+CC-TWR-913423,Monopole,330,TIA-222-F,4,1,3,46.1,17.7,38.5,5,2023-12-14,True,undersold_capacity,3065.4
+CC-TWR-421549,Monopole,260,TIA-222-G,4,1,3,66.0,13.7,20.8,6,2023-08-17,True,undersold_capacity,4507.2
+CC-TWR-691912,Self-Supporting Lattice,280,TIA-222-H,3,1,2,62.8,27.5,43.8,9,2023-03-29,True,none,0
+CC-TWR-786508,Guyed Tower,180,TIA-222-G,6,1,5,99.5,44.1,44.3,12,2023-03-01,True,none,0
+CC-TWR-460745,Monopole,260,TIA-222-H,3,2,1,83.4,93.3,111.9,26,2023-04-27,True,near_structural_limit,0
+CC-TWR-169403,Self-Supporting Lattice,140,TIA-222-G,3,0,3,66.7,0.0,0.0,0,2024-11-26,False,undersold_capacity,3720.05
+CC-TWR-786393,Stealth/Concealed,290,TIA-222-H,3,1,2,61.4,21.3,34.7,8,2023-05-23,True,undersold_capacity,3003.69
+CC-TWR-286638,Monopole,330,TIA-222-F,4,1,3,73.1,21.9,30.0,10,2023-08-09,True,undersold_capacity,3924.9
+CC-TWR-626806,Monopole,300,TIA-222-H,4,1,3,76.7,30.8,40.2,10,2024-03-16,False,none,0
+CC-TWR-133795,Self-Supporting Lattice,210,TIA-222-F,4,1,3,58.2,44.9,77.2,12,2023-03-01,True,none,0
+CC-TWR-758775,Guyed Tower,110,TIA-222-H,8,1,7,99.8,16.2,16.2,5,2024-03-23,False,undersold_capacity,2566.83
+CC-TWR-396882,Self-Supporting Lattice,180,TIA-222-F,4,1,3,68.6,11.1,16.2,4,2023-07-12,True,undersold_capacity,5428.06
+CC-TWR-475479,Guyed Tower,100,TIA-222-H,8,1,7,117.2,73.2,62.5,23,2024-04-18,False,none,0
+CC-TWR-212255,Monopole,230,TIA-222-H,3,1,2,78.7,7.5,9.5,3,2024-07-16,False,undersold_capacity,3501.16
+CC-TWR-218414,Self-Supporting Lattice,150,TIA-222-H,5,1,4,72.0,21.2,29.4,8,2023-11-25,True,undersold_capacity,3522.64
+CC-TWR-824042,Self-Supporting Lattice,140,TIA-222-H,4,2,2,44.0,67.4,153.2,21,2023-01-30,True,near_structural_limit,0
+CC-TWR-768676,Stealth/Concealed,130,TIA-222-F,4,1,3,78.0,14.3,18.3,4,2023-02-04,True,undersold_capacity,3715.09
+CC-TWR-172274,Stealth/Concealed,220,TIA-222-H,4,1,3,58.4,26.2,44.9,8,2024-02-07,True,none,0
+CC-TWR-754644,Monopole,280,TIA-222-H,4,1,3,42.1,16.8,40.0,6,2023-03-06,True,none,0
+CC-TWR-618934,Self-Supporting Lattice,270,TIA-222-F,3,1,2,45.3,8.9,19.7,3,2023-10-10,True,undersold_capacity,2705.01
+CC-TWR-180657,Monopole,190,TIA-222-H,4,1,3,52.3,13.2,25.3,4,2024-06-03,False,undersold_capacity,5138.94
+CC-TWR-767830,Guyed Tower,220,TIA-222-G,8,1,7,123.9,30.9,24.9,10,2024-02-17,True,undersold_capacity,2969.29
+CC-TWR-619920,Self-Supporting Lattice,130,TIA-222-F,5,1,4,83.9,22.6,26.9,6,2024-08-02,False,undersold_capacity,3744.56
+CC-TWR-495533,Self-Supporting Lattice,220,TIA-222-F,3,1,2,80.5,11.0,13.7,4,2024-10-31,False,undersold_capacity,5852.14
+CC-TWR-777558,Monopole,90,TIA-222-H,4,1,3,87.5,12.4,14.2,5,2024-09-10,False,undersold_capacity,5483.03
+CC-TWR-833247,Monopole,170,TIA-222-H,3,1,2,69.6,33.8,48.6,9,2023-07-04,True,outdated_analysis,0
+CC-TWR-399607,Self-Supporting Lattice,150,TIA-222-F,4,1,3,64.2,11.0,17.1,4,2024-08-17,False,undersold_capacity,3427.67
+CC-TWR-404561,Monopole,90,TIA-222-G,4,1,3,88.2,22.9,25.9,6,2024-05-06,False,undersold_capacity,3367.79
+CC-TWR-278240,Monopole,130,TIA-222-H,4,1,3,54.0,37.8,69.9,12,2023-04-25,True,outdated_analysis,0
+CC-TWR-480941,Self-Supporting Lattice,300,TIA-222-H,3,1,2,52.0,22.2,42.7,11,2024-01-25,True,none,0
+CC-TWR-156802,Stealth/Concealed,290,TIA-222-G,5,0,5,77.6,0.0,0.0,0,2024-11-25,False,undersold_capacity,5236.18
+CC-TWR-935457,Guyed Tower,310,TIA-222-G,5,2,3,129.2,63.9,49.4,18,2023-01-14,True,none,0
+CC-TWR-133958,Monopole,270,TIA-222-F,4,1,3,69.7,24.9,35.6,11,2024-08-08,False,undersold_capacity,2621.52
+CC-TWR-692002,Stealth/Concealed,140,TIA-222-G,4,1,3,49.5,30.6,61.8,9,2024-10-16,False,none,0
+CC-TWR-108874,Monopole,150,TIA-222-H,5,0,5,82.0,0.0,0.0,0,2023-04-08,True,undersold_capacity,4370.42
+CC-TWR-161437,Monopole,330,TIA-222-F,3,1,2,74.9,7.1,9.5,3,2024-08-05,False,undersold_capacity,5525.07
+CC-TWR-576877,Monopole,190,TIA-222-H,5,1,4,89.5,15.0,16.7,4,2023-02-23,True,undersold_capacity,2649.36
+CC-TWR-136415,Monopole,240,TIA-222-F,4,1,3,60.5,11.7,19.3,3,2024-09-03,False,undersold_capacity,5298.74
+CC-TWR-508783,Monopole,170,TIA-222-H,5,1,4,82.5,19.2,23.3,6,2024-01-15,True,undersold_capacity,5049.83
+CC-TWR-618746,Monopole,160,TIA-222-G,5,1,4,85.2,20.5,24.0,6,2023-04-08,True,undersold_capacity,3211.25
+CC-TWR-596564,Monopole,290,TIA-222-H,5,1,4,72.5,11.0,15.2,5,2023-09-28,True,undersold_capacity,3391.2
+CC-TWR-728950,Stealth/Concealed,90,TIA-222-F,3,1,2,73.1,35.0,47.9,10,2024-09-03,False,none,0
+CC-TWR-422554,Monopole,270,TIA-222-G,5,1,4,59.5,22.5,37.7,10,2024-01-15,True,undersold_capacity,3561.62
+CC-TWR-783176,Self-Supporting Lattice,140,TIA-222-H,3,1,2,71.9,29.9,41.5,11,2024-02-10,True,outdated_analysis,0
+CC-TWR-491439,Stealth/Concealed,300,TIA-222-G,4,1,3,42.5,34.1,80.3,9,2023-04-22,True,none,0
+CC-TWR-598807,Stealth/Concealed,230,TIA-222-H,4,1,3,80.8,28.2,35.0,9,2024-07-23,False,undersold_capacity,3040.4
+CC-TWR-423232,Rooftop,190,TIA-222-H,4,1,3,33.5,13.2,39.5,5,2023-10-13,True,undersold_capacity,3025.49

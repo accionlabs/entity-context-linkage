@@ -1,43 +1,20 @@
-# HEART_BEAT.MD - Activity Log
+# HEART_BEAT
 
-| TIMESTAMP | ACTIVITY | PROMPT |
-|-----------|----------|--------|
-| 2026-02-07 21:24 | FalkorDB migration complete | Migrated from Neo4j to FalkorDB with live graph |
-| 2026-02-07 21:27 | Sample documents created | Added tower_site_report_T789.md and drone images |
-| 2026-02-07 21:31 | Code updated to use sample_documents | ecl_falkordb.py and ecl_llm.py load from file |
-| 2026-02-08 04:57 | AI Primer reviewed | Read 269-page document, aligned ECL terminology |
-| 2026-02-08 04:58 | Demo playbook updated | Integrated AI Primer concepts and ROI framing |
-| 2026-02-07T20:57:37-05:00 | Review and resolve issues in ecl_poc.py | User requested review of ecl_poc.py |
-| 2026-02-07T20:58:00-05:00 | Identified 12+ syntax errors | Raw newlines inside regex/string literals |
-| 2026-02-07T20:59:00-05:00 | Fixing syntax errors | Multi-chunk replacement of broken strings |
-| 2026-02-07T21:00:00-05:00 | Verification complete | Syntax check passed, running full script |
-| 2026-02-07T21:00:26-05:00 | Planning Ollama integration | User requested LLM enhancement, creating plan |
-| 2026-02-07T21:01:47-05:00 | Implementing ecl_llm.py | Created OllamaClient + 5 LLM experts |
-| 2026-02-07T21:10:00-05:00 | LLM extraction test passed | 3/4 experts worked via llama3:8b |
-| 2026-02-07T21:09:38-05:00 | Migrating to FalkorDB | User requested switching from Neo4j |
-| 2026-02-07T21:11:25-05:00 | Created ecl_falkordb.py | FalkorDBClient + live graph operations |
-| 2026-02-07T21:14:00-05:00 | FalkorDB test passed | 18 nodes, 16 edges, live queries working |
-| 2026-02-08 10:48 | Generated 10 slide visuals | Hero, charts, diagrams saved to slides/ folder |
-| 2026-02-08 10:55 | Mermaid diagrams exported | User exported 4 diagrams from mermaid.live |
-| 2026-02-08 10:57 | PlusAI prompts created | 17 slide prompts in slides/PLUSAI_PROMPTS.md |
-| 2026-02-08 11:32 | Fixed graph edge directions | Tower-centric edges in ecl_poc.py and HTML |
-| 2026-02-08 11:37 | Created speaker notes | Full script in slides/SPEAKER_NOTES.md |
-| 2026-02-08 11:38 | Fixed Ollama context | Added num_ctx: 8192 to ecl_llm.py |
-| 2026-02-09 12:41 | Practice demo run | Verified ecl_poc.py runs (18 entities, 18 edges, 5 MCP tools) |
-2026-02-09 12:42:18, Analyzing Lyzr images to understand use case for ECL comparison, User mentioned Lyzr as prime example for ECL use case
-| 2026-02-09 12:43 | Converted 20 HEIC to PNG | Converted IMG_7335-7354.HEIC to PNG in Lyzr/ folder |
-| 2026-02-09 19:53 | Read Lyzr AI Executive Summary | User shared Crown Castle purchase doc: $380k contract, Contract Data Extraction use case |
-| 2026-02-09 19:54 | Analyzed Lyzr Success Criteria vs ECL | IMG_7342 = Use Case Success Criteria matrix; ECL covers ~60% already, gaps in enterprise readiness |
-| 2026-02-09 19:58 | Created ECL vs Lyzr Architecture | ECL_ARCHITECTURE.html — side-by-side comparison, quality+price positioning, ECL wins 9/10 criteria |
-| 2026-02-09 20:04 | Implemented ALL ECL gap fixes | ecl_tracing.py (audit trail + validation + guardrails), ecl_connectors.py (4 SoR adapters), ecl_governance.py (retention policies), modified ecl_llm.py (timing + model versioning + hallucination guard), test_ecl.py (29/29 pass) |
-| 2026-02-09 21:37 | Built Low-Code Builder | ecl_server.py (HTTP backend) + ecl_studio.html (full UI: expert toggles, confidence slider, model selector, entity table, graph preview, trace panel) |
-| 2026-02-09 22:00 | Updated ALL presentation assets | PLUSAI_PROMPTS.md (18 slides), SPEAKER_NOTES.md (18 slides + 10 talking points), DEMO_PLAYBOOK.md (6 acts), slides/README.md (new asset table) |
-| 2026-02-09 23:25 | Regenerated 7 slide images | slide5 (workflow), slide6 (ETL vs ECL), slide9 (6-layer arch), slide10 (tech pipeline), slide11 (ECL Studio x2), slide15 (ECL vs Lyzr) — HTML→screenshot pipeline |
-| 2026-02-09 23:35 | Git repo initialized + pushed | .gitignore (excludes Lyzr/, __pycache__, PDFs), README.md, pushed to github.com/thedataengineer/EKG |
-| 2026-02-09 23:42 | Streamlit ECL Studio | ecl_app.py — rebuilt UI with Streamlit 1.54 (agraph, plotly, confidence bars), ecl-demo pyenv venv pinned via .python-version |
-| 2026-02-10 | Flattened ECL repo | Removed embedded git repo from ECL/, merged all 44 files into parent repo |
-| 2026-02-10 | Split into logical commits | 7 commits: core modules, graph schemas, architecture HTML, docs, tests, sample documents, slides |
-| 2026-02-10 | Verified .gitignore | Confirmed no __pycache__, PDFs, DOCX, Lyzr/, or traces/ committed; all modules import/compile |
-| 2026-02-10 00:44 | Containerization audit | Reviewed Dockerfile, docker-compose, CloudFormation, deploy scripts, nginx, server code — found 16 issues (5 critical: server bind bug, CF errors; 6 significant: env vars, missing .dockerignore, requirements gaps) |
-| 2026-02-10 00:47 | Fixed all containerization issues | ecl_server.py bind 0.0.0.0, .dockerignore, ecl_falkordb.py env vars, ecl_app.py OLLAMA_HOST, CloudFormation fixes (BlockDeviceMappings, Ubuntu AMI, Conditions placement, Warnings removal), .env.example, ssl/.gitkeep — 29/29 tests pass |
-
+| Timestamp | Activity | Prompt |
+|---|---|---|
+| 2026-02-25T22:13:26+05:30 | Generated 6 use cases for real-world problems that ECL does NOT solve effectively, using industry characteristics without naming companies | Come up with use-cases for real world problems for Cencora, KinderCare, LabCorp, Cision, Abbott, JPM&Chase that do not get solved with ECL effectively |
+| 2026-02-25T22:15:33+05:30 | Generated 6 use cases where ECL IS the answer for the same industry characteristics — contract reconciliation, licensing compliance, protocol tracing, campaign attribution, predicate device linking, KYC entity resolution | Where ECL is the answer for the same clients |
+| 2026-02-26T03:55:17+05:30 | Redid Slide 10 in ECL_SUMMIT_DECK_30.md — replaced telecom-specific technical stack with 6 cross-industry ECL patterns (pharma, childcare, diagnostics, media, devices, banking) showing multi-hop chains | Redo the slide 10 content |
+| 2026-02-26T16:38:05+05:30 | Demo setup: started Docker, FalkorDB container, verified Ollama running, confirmed all 9 CSV data files present, launched Streamlit at localhost:8501, ran 40/40 tests passing, healthz ok | setup my demo |
+| 2026-02-26T16:45:22+05:30 | Fixed metric card readability — added explicit white text for values, light slate for labels, soft indigo for deltas; softened harsh red (#ef4444 → #f87171) across all chart palettes | Graph preview and ECL UI is hard / text hard to read / change red color |
+| 2026-02-26T16:55:00+05:30 | Added cross-entity relationship generation to run_extraction() — Tower root node auto-detection, Equipment→INSTALLED_ON→Tower, Tower→HAS_RISK/HAS_OPPORTUNITY, Company→HAS_EQUIPMENT, Risk→AFFECTS→Contract. Created .streamlit/config.toml with indigo theme | Graph relationships does not go beyond entity / Even with OLLAMA |
+| 2026-02-27T04:42:18+05:30 | Made hallucination guard configurable — 3 modes (Strict/Moderate/Off) as sidebar selector next to Confidence Threshold. Strict rejects ungrounded entities, Moderate warns but keeps with reduced confidence, Off accepts all LLM output. Core validate_entity logic unchanged | I want 100% of entities graphed / configure hallucination guard |
+| 2026-02-27T05:35:06+05:30 | Created 'Adaptive LLM (Any Document)' extraction mode. Added `AdaptiveLLMExpert` with schema-free prompt that discovers entity/relationship types from ANY document instead of forcing telecom types. Skips hardcoded tower-centric wiring when used. 40/40 tests pass. Original telecom demo pathways remain 100% functional. | Make the LLM path genuinely document-adaptive / is the demo going to still work |
+| 2026-02-27T03:39:12Z | Ran ECL test suite end to end (41/41 passing) | Let's run the test end to end. |
+| 2026-02-27T03:42:41Z | Audited test sample dictionary characteristics and injected rigorous TIA-222-H/ASCE 7 structural properties into the test data | |
+| 2026-02-27T04:13:33Z | Created ecl_lease_ingestor.py to parse 750 tenant leases and added Global Portfolio UI tab to ecl_app.py | |
+| 2026-02-27T04:23:30Z | Expanded test_ecl.py testing logic to cover parsing and batch ingestion of the 750 tenant leases. 44/44 tests passing. | |
+| 2026-02-27T04:33:47Z | Geocoded the 750 mock leases against Nominatim API and updated the Streamlit UI to render an aggregate Regional PyDeck map representing tower density. | |
+| 2026-02-28T12:10:15+05:30 | Explained why Mermaid quadrantChart labels overlap due to close coordinates. | Why does mermaid look liker this? |
+| 2026-02-28T12:13:08+05:30 | Clarified that Mermaid quadrantCharts do not support newlines in point labels. | maybe new lines |
+| 2026-03-02T10:40:39+0530 | Scrubbed all "Crown Castle" references from code and docs; renamed assets to "Summit" for clean architecture presentation. | scrub Crown Castle references |

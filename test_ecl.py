@@ -331,7 +331,7 @@ def test_llm_module():
     try:
         from ecl_llm import (
             OllamaClient, LLMBaseExpert, LLMMoEOrchestrator,
-            LLMContractExpert, LLMEquipmentExpert,
+            LLMContractExpert, LLMEquipmentExpert, AdaptiveLLMExpert
         )
         results.ok("Import ecl_llm (with tracing integration)")
     except ImportError as e:
@@ -345,9 +345,181 @@ def test_llm_module():
 
     # Test Orchestrator creation
     orch = LLMMoEOrchestrator(model="llama3:8b")
-    assert len(orch.experts) == 4
+    assert len(orch.experts) >= 4, f"Should have at least 4 experts, got {len(orch.experts)}"
     assert orch.last_pipeline_trace is None
-    results.ok("LLMMoEOrchestrator has 4 experts + trace attribute")
+    results.ok("LLMMoEOrchestrator loads experts + trace attribute")
+
+    # Test AdaptiveLLMExpert specifically (the cause of the previous 8B failure)
+    adaptive = AdaptiveLLMExpert(client)
+    prompt = adaptive.get_extraction_prompt("Test Document")
+    assert "EXAMPLE JSON OUTPUT" in prompt, "Adaptive prompt should contain JSON few-shot example"
+    
+    # Mock a response with the explicit format string that failed earlier
+    mock_response = {
+        "entities": [{"name": "Test", "type": "Company", "properties": {}}],
+        "relationships": []
+    }
+    res = adaptive.parse_llm_response(mock_response)
+    assert len(res.entities) == 1
+    assert res.entities[0].type.name == "COMPANY", f"Adaptive mapping should map 'Company' to EntityType.COMPANY, got {res.entities[0].type.name}"
+    assert res.entities[0].properties["_discovered_type"] == "Company"
+    results.ok("AdaptiveLLMExpert parsing maps discovered types correctly")
+
+
+# ============================================================
+# TEST 8: Telecom REIT Pipeline
+# ============================================================
+
+def test_telecom_reit_pipeline():
+    print("\n[TEST 8] Telecom REIT Pipeline — End-to-End")
+    print("-" * 40)
+
+    try:
+        from telecom_reit.pipeline import TelecomREITPipeline
+        results.ok("Import telecom_reit.pipeline")
+    except ImportError as e:
+        results.fail("Import telecom_reit.pipeline", str(e))
+        return
+
+    pipeline = TelecomREITPipeline()
+    result = pipeline.run_pipeline(verbose=False)
+
+    # Check extraction
+    assert len(result.extracted) > 0, "Should have extracted entities"
+    assert "towers" in result.extracted
+    assert "contracts" in result.extracted
+    assert "drone" in result.extracted
+    assert "billing" in result.extracted
+    total = sum(len(v) for v in result.extracted.values())
+    assert total > 20, f"Should have >20 entities, got {total}"
+    results.ok(f"Extraction: {total} entities across {len(result.extracted)} sources")
+
+    # Check context assembly
+    assert len(result.tower_contexts) == 3, f"Should have 3 towers, got {len(result.tower_contexts)}"
+    for tid, ctx in result.tower_contexts.items():
+        assert ctx.total_contracted_equipment > 0
+        assert ctx.physical_reconciliation_status != "UNKNOWN"
+    results.ok("Context assembly: 3 towers with health indicators")
+
+    # Check linkage engine
+    assert result.linkage_result.total_linkages > 0
+    assert result.linkage_result.high_severity_count > 0, "Should have HIGH severity linkages"
+    results.ok(f"Linkage: {result.linkage_result.total_linkages} linkages, "
+               f"{result.linkage_result.high_severity_count} HIGH severity")
+
+    # Check summary
+    assert "total_entities_extracted" in result.summary
+    assert "tower_health" in result.summary
+    results.ok("Pipeline summary generated successfully")
+
+
+# ============================================================
+# TEST 9: Telecom REIT Adapter
+# ============================================================
+
+def test_telecom_reit_adapter():
+    print("\n[TEST 9] Telecom REIT Adapter — Type Conversion")
+    print("-" * 40)
+
+    try:
+        from telecom_reit.adapter import TelecomREITReconciliationExpert, tr_entity_to_ecl_entity
+        from telecom_reit.models import Entity as TREntity, EntitySource, EntityType as TREntityType
+        from ecl_poc import EntityType as ECLEntityType
+        results.ok("Import telecom_reit.adapter")
+    except ImportError as e:
+        results.fail("Import telecom_reit.adapter", str(e))
+        return
+
+    # Test entity conversion
+    tr_entity = TREntity(
+        entity_id="tower_TR-TEST",
+        entity_type=TREntityType.TOWER,
+        source=EntitySource.CCISITES,
+        attributes={"tower_id": "TR-TEST", "height_ft": 150},
+        confidence=0.95,
+    )
+    ecl_entity = tr_entity_to_ecl_entity(tr_entity)
+    assert ecl_entity.type == ECLEntityType.TOWER
+    assert ecl_entity.confidence == 0.95
+    assert "tower_id" in ecl_entity.properties
+    results.ok("TR Entity → ECL Entity conversion")
+
+    # Test expert interface
+    expert = TelecomREITReconciliationExpert()
+    assert expert.name == "TelecomREITReconciliationExpert"
+    extraction = expert.extract("dummy text")
+    assert len(extraction.entities) > 0, "Expert should produce entities"
+    assert extraction.reasoning != ""
+    results.ok(f"Expert extraction: {len(extraction.entities)} entities, "
+               f"{len(extraction.relationships)} relationships")
+
+
+# ============================================================
+# TEST 10: Telecom REIT Linkage Engine
+# ============================================================
+
+def test_telecom_reit_linkage():
+    print("\n[TEST 10] Telecom REIT Linkage — Reconciliation Logic")
+    print("-" * 40)
+
+    try:
+        from telecom_reit.linkage import (
+            run_contract_vs_drone_linkage, detect_defaulted_equipment,
+        )
+        from telecom_reit.sample_data import CONTRACT_ENTITIES, DRONE_ENTITIES
+        from telecom_reit.models import LinkageType
+        results.ok("Import telecom_reit.linkage")
+    except ImportError as e:
+        results.fail("Import telecom_reit.linkage", str(e))
+        return
+
+    # Test contract vs drone linkage
+    linkages = run_contract_vs_drone_linkage(CONTRACT_ENTITIES, DRONE_ENTITIES)
+    assert len(linkages) > 0, "Should produce linkages"
+
+    # Check for unauthorized equipment detection (TR-6150)
+    unauthorized = [l for l in linkages if l.linkage_type == LinkageType.UNAUTHORIZED_EQUIPMENT]
+    assert len(unauthorized) > 0, "Should detect unauthorized equipment on TR-6150"
+    results.ok(f"Contract vs Drone: {len(linkages)} linkages, {len(unauthorized)} unauthorized")
+
+    # Test defaulted equipment detection
+    defaulted = detect_defaulted_equipment(CONTRACT_ENTITIES, DRONE_ENTITIES)
+    assert len(defaulted) > 0, "Should detect defaulted DISH equipment on TR-8803"
+
+    dish_default = [d for d in defaulted if "DISH" in str(d.delta.get("tenant", ""))]
+    assert len(dish_default) > 0, "Should specifically find DISH defaulted equipment"
+    results.ok(f"Defaulted equipment: {len(defaulted)} found ({len(dish_default)} DISH)")
+
+
+def test_lease_ingestor():
+    print("\n[TEST 11] Lease Ingestor Logic")
+    print("-" * 40)
+    try:
+        from ecl_lease_ingestor import build_portfolio_graph, parse_lease_file
+        results.ok("Import ecl_lease_ingestor")
+    except ImportError:
+        results.fail("Import ecl_lease_ingestor")
+        return
+
+    import os
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    sample_lease = os.path.join(base_dir, "contracts", "tenant_leases", "TL-00C17C4E.md")
+    
+    if os.path.exists(sample_lease):
+        data = parse_lease_file(sample_lease)
+        assert data.get("sublicense_id") == "TL-00C17C4E", "Sublicense ID mismatch"
+        assert data.get("tower_id") == "CC-TWR-151328", "Tower ID mismatch"
+        assert "monthly_rent" in data, "No monthly rent extracted"
+        results.ok("parse_lease_file basic extraction works accurately")
+    
+    # Test batch parsing output
+    graph_res = build_portfolio_graph()
+    assert "entities" in graph_res, "Entities key missing in graph output"
+    assert "relationships" in graph_res, "Relationships key missing in graph output"
+    assert graph_res["total_entities"] > 0, "Entities count is 0"
+    assert graph_res["total_relationships"] > 0, "Relationships count is 0"
+    assert graph_res["total_rent"] > 0, "Total rent miscalculated"
+    results.ok(f"build_portfolio_graph batch ingestion: {graph_res['total_entities']} entities, {graph_res['total_relationships']} rels")
 
 
 # ============================================================
@@ -367,6 +539,10 @@ if __name__ == "__main__":
     test_governance()
     test_base_types()
     test_llm_module()
+    test_telecom_reit_pipeline()
+    test_telecom_reit_adapter()
+    test_telecom_reit_linkage()
+    test_lease_ingestor()
 
     success = results.summary()
     sys.exit(0 if success else 1)

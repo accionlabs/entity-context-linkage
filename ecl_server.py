@@ -40,6 +40,14 @@ try:
 except ImportError:
     LLM_AVAILABLE = False
 
+# Try to import Telecom REIT module
+try:
+    from telecom_reit.pipeline import TelecomREITPipeline
+    from telecom_reit.adapter import TelecomREITReconciliationExpert
+    TELECOM_REIT_AVAILABLE = True
+except ImportError:
+    TELECOM_REIT_AVAILABLE = False
+
 
 class ECLStudioHandler(SimpleHTTPRequestHandler):
     """HTTP handler for ECL Studio API."""
@@ -60,6 +68,8 @@ class ECLStudioHandler(SimpleHTTPRequestHandler):
             self._json_response(self._get_governance())
         elif path == "/api/traces":
             self._json_response(self._list_traces())
+        elif path == "/api/telecom-reit/reconciliation":
+            self._json_response(self._telecom_reit_reconciliation())
         else:
             self.send_error(404, "Not Found")
 
@@ -71,6 +81,13 @@ class ECLStudioHandler(SimpleHTTPRequestHandler):
             try:
                 data = json.loads(body)
                 result = self._run_extraction(data)
+                self._json_response(result)
+            except Exception as e:
+                self._json_response({"error": str(e)}, status=500)
+        elif parsed.path == "/api/telecom-reit/pipeline":
+            content_length = int(self.headers.get('Content-Length', 0))
+            try:
+                result = self._run_telecom_reit_pipeline()
                 self._json_response(result)
             except Exception as e:
                 self._json_response({"error": str(e)}, status=500)
@@ -107,9 +124,7 @@ class ECLStudioHandler(SimpleHTTPRequestHandler):
         ollama_ok = False
         if LLM_AVAILABLE:
             try:
-                import os
-                ollama_host = os.getenv("OLLAMA_HOST", "http://localhost:11434")
-                client = OllamaClient(base_url=ollama_host)
+                client = OllamaClient()
                 ollama_ok = client.is_available()
             except:
                 pass
@@ -130,6 +145,8 @@ class ECLStudioHandler(SimpleHTTPRequestHandler):
             {"name": "OpportunityExpert", "domain": "Business Opportunities", "type": "regex", "icon": "🎯"},
             {"name": "HealthcareExpert", "domain": "Healthcare Records", "type": "regex", "icon": "🏥"},
         ]
+        if TELECOM_REIT_AVAILABLE:
+            experts.append({"name": "TelecomREITReconciliationExpert", "domain": "Tower Reconciliation", "type": "pipeline", "icon": "🏗️"})
         if LLM_AVAILABLE:
             for e in experts[:4]:
                 e["llm_variant"] = f"LLM{e['name']}"
@@ -229,21 +246,45 @@ class ECLStudioHandler(SimpleHTTPRequestHandler):
         if '/api/' in str(args[0]) or args[0] == '"GET / HTTP/1.1"':
             sys.stderr.write(f"  [{datetime.now().strftime('%H:%M:%S')}] {args[0]}\n")
 
+    def _run_telecom_reit_pipeline(self):
+        """Run the Telecom REIT ECL pipeline and return results."""
+        if not TELECOM_REIT_AVAILABLE:
+            return {"error": "Telecom REIT module not available"}
+        pipeline = TelecomREITPipeline()
+        result = pipeline.run_pipeline(verbose=False)
+        return {
+            "summary": result.summary,
+            "three_way_reconciliation": result.linkage_result.three_way,
+            "total_linkages": result.linkage_result.total_linkages,
+            "high_severity": result.linkage_result.high_severity_count,
+            "revenue_impact": result.linkage_result.total_revenue_impact,
+        }
+
+    def _telecom_reit_reconciliation(self):
+        """Get tower reconciliation data."""
+        if not TELECOM_REIT_AVAILABLE:
+            return {"error": "Telecom REIT module not available"}
+        pipeline = TelecomREITPipeline()
+        result = pipeline.run_pipeline(verbose=False)
+        return {
+            "towers": result.linkage_result.three_way,
+            "tower_count": len(result.linkage_result.three_way),
+        }
+
 
 def main():
-    host = os.getenv("ECL_HOST", "0.0.0.0")
-    port = int(os.getenv("ECL_PORT", "8765"))
+    port = 8765
     print("=" * 60)
     print("  🧪 ECL Studio — Low-Code Builder")
     print("=" * 60)
-    print(f"  Server:    http://{host}:{port}")
+    print(f"  Server:    http://localhost:{port}")
     print(f"  LLM:       {'✓ Available' if LLM_AVAILABLE else '○ Regex-only mode'}")
     print(f"  Confidence: {MIN_CONFIDENCE}")
     print(f"  Prompts:   {len(PROMPT_VERSIONS)} versioned")
     print("=" * 60)
     print("  Press Ctrl+C to stop\n")
 
-    server = HTTPServer((host, port), ECLStudioHandler)
+    server = HTTPServer(('localhost', port), ECLStudioHandler)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

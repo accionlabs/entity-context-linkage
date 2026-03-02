@@ -1,0 +1,98 @@
+# TOWER SITE SUBLICENSE AGREEMENT — T-MOBILE
+
+**Sublicense ID:** TL-B45EA56A  
+**Tower Site ID:** CC-TWR-472358  
+**MLA Reference:** MLA-T-MO-2021
+
+---
+
+**THIS TOWER SITE SUBLICENSE AGREEMENT** ("Sublicense Agreement") is entered into as of September 14, 2012 ("Commencement Date"), by and between:
+
+**LICENSOR:**  
+Summit USA Inc.  
+2000 Corporate Drive  
+Canonsburg, PA 15317  
+("Summit" or "Licensor")
+
+**LICENSEE:**  
+T-Mobile USA Inc.  
+12920 SE 38th St., Bellevue, WA 98006  
+("T-Mobile" or "Licensee")
+
+---
+
+## RECITALS
+
+WHEREAS, Licensor operates tower **CC-TWR-472358** in Independence, MO;
+
+WHEREAS, Licensee desires to install equipment pursuant to **MLA-T-MO-2021**;
+
+NOW, THEREFORE, the parties agree:
+
+---
+
+## ARTICLE 1: LICENSED SPACE
+
+**1.1 Tower Space.** Licensor grants up to **3 antenna(s)** at **126 ft** RAD center, and **1 RRU(s)**.
+- **Ground Space:** 361 sq ft ground space with equipment cabinet
+
+**1.2 Equipment Manifest:**
+
+| Item | Qty | Model | Location |
+|------|-----|-------|----------|
+| Panel Antenna | 3 | CommScope SBNHH-1D65C | 126ft, 1 sector(s) |
+| RRU | 1 | Nokia AirScale AAHF B41/B71 | 126ft |
+| Cabinet | 1 | Outdoor enclosure | Ground |
+| Fiber | 1 | 12-strand SM OS2 | Tower to cabinet |
+| Coax | 3 | 7/8" feedline | Tower to ground |
+
+---
+
+## ARTICLE 2: TERM
+
+**2.1 Term.** 10 years, from September 14, 2012 to 12 September 2022.
+
+**2.2 Zone:** Suburban | **Status:** Active
+
+---
+
+## ARTICLE 3: MONTHLY FEES
+
+**3.1 Monthly Fee.** **$3,335.05/month** ($40,020.60/year).
+
+**3.2 Escalation.** 2.6% annually.
+
+---
+
+## ARTICLE 4: INSTALLATION & MAINTENANCE
+
+All installations per TIA-222-H, OSHA 1926.502, FCC 47 CFR 1.1310, and local codes. 24/7 maintenance access. Quarterly inspections required.
+
+---
+
+## ARTICLE 5: INSURANCE
+
+CGL: $5,000,000 per occurrence. Licensor as additional insured. Licensee indemnifies Licensor from all claims.
+
+---
+
+## ARTICLE 6: INTERFERENCE
+
+Licensee shall not cause interference to prior installations. Priority based on installation date.
+
+---
+
+## ARTICLE 7: TERMINATION
+
+Licensee may terminate on 180 days' notice. Equipment removal within 180 days of termination. Nonpayment after 30 days' notice = default.
+
+---
+
+**LICENSOR:** Summit USA Inc.  
+By: \_\_\_\_ / Date: \_\_\_\_
+
+**LICENSEE:** T-MOBILE USA INC.  
+By: \_\_\_\_ / Date: \_\_\_\_
+
+---
+*Exhibits: Site Plan (CC-TWR-472358), Equipment Layout, MLA (MLA-T-MO-2021)*

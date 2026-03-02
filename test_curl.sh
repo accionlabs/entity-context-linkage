@@ -1,0 +1,9 @@
+#!/bin/bash
+curl -X POST http://127.0.0.1:11434/api/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "llama3:8b",
+    "prompt": "Analyze this document",
+    "format": "json",
+    "stream": false
+  }'
