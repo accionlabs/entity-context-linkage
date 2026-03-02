@@ -9,8 +9,8 @@ Huntsville, AL
 
 **TENANT:**  
 Summit USA Inc.  
-2000 Corporate Drive  
-Canonsburg, PA 15317  
+100 Summit Way  
+Tech Valley, CA 94043  
 ("Tenant" or "Summit")
 
 ---

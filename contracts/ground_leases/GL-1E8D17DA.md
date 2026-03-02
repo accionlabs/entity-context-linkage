@@ -8,7 +8,7 @@ THIS LEASE made April 07, 2022 between the Lessor and Lessee identified below:
 | Party | Name | Address |
 |-------|------|---------|
 | Landlord | NJ Tribal Land Authority | Paterson, NJ |
-| Tenant | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Tenant | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

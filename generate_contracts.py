@@ -356,15 +356,15 @@ def generate_ground_lease(row, idx):
         parts.append("")
         parts.append(f"**{p_lessee.upper()}:**  ")
         parts.append("Summit USA Inc.  ")
-        parts.append("2000 Corporate Drive  ")
-        parts.append('Canonsburg, PA 15317  ')
+        parts.append("100 Summit Way  ")
+        parts.append('Tech Valley, CA 94043  ')
         parts.append(f'("{p_lessee}" or "Summit")')
     else:
         # Table style
         parts.append(f"| Party | Name | Address |")
         parts.append(f"|-------|------|---------|")
         parts.append(f"| {p_lessor} | {landowner_name} | {city}, {state} |")
-        parts.append(f"| {p_lessee} | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |")
+        parts.append(f"| {p_lessee} | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |")
     parts.append("")
     parts.append("---")
     parts.append("")

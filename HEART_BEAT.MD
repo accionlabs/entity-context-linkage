@@ -21,3 +21,4 @@
 | 2026-03-02T10:45:01+0530 | Professionally rewrote README.md for enterprise-grade presentation, focusing on ROI and architectural clarity. | rewrite README.md |
 | 2026-03-02T10:46:50+0530 | Fixed formatting and keyword conflicts in README.md Mermaid diagram. | fix README diagram |
 | 2026-03-02T10:47:14+0530 | Simplified Mermaid diagram in README.md to restore rendering compatibility. | fix README diagram rendering |
+| 2026-03-02T10:50:44+0530 | Scrubbed Crown Castle corporate address (2000 Corporate Drive) from generator and 1,250+ contracts. | scrub corporate address |

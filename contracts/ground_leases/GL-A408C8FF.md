@@ -5,7 +5,7 @@ This GROUND LEASE AGREEMENT (hereinafter referred to as the "Agreement") is ente
 | Party | Name | Address |
 |-------|------|---------|
 | Landlord | William R. Hawkins | Covington, KY |
-| Tenant | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Tenant | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

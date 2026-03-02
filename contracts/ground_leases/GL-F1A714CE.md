@@ -8,7 +8,7 @@ This GROUND LEASE AGREEMENT (hereinafter referred to as the "Agreement") is ente
 | Party | Name | Address |
 |-------|------|---------|
 | Landowner | Fort Wayne Land Conservation Trust | Fort Wayne, IN |
-| Lessee | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Lessee | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

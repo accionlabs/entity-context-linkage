@@ -5,7 +5,7 @@
 | Party | Name | Address |
 |-------|------|---------|
 | Owner | PA Farmland Trust | Allentown, PA |
-| Operator | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Operator | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

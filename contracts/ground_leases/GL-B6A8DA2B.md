@@ -5,7 +5,7 @@
 | Party | Name | Address |
 |-------|------|---------|
 | Lessor | First Baptist Church of Toledo | Toledo, OH |
-| Lessee | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Lessee | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

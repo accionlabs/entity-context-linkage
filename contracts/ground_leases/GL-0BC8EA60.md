@@ -8,7 +8,7 @@ THIS LEASE made June 10, 2002 between the Lessor and Lessee identified below:
 | Party | Name | Address |
 |-------|------|---------|
 | Lessor | Native American Heritage Trust | Tuscaloosa, AL |
-| Lessee | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Lessee | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

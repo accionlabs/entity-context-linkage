@@ -5,7 +5,7 @@ THIS LEASE made February 03, 2011 between the Lessor and Lessee identified below
 | Party | Name | Address |
 |-------|------|---------|
 | Owner | WI Tribal Land Authority | Milwaukee, WI |
-| Operator | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Operator | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

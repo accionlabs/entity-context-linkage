@@ -8,7 +8,7 @@ THIS LEASE made 06/11/2006 between the Lessor and Lessee identified below:
 | Party | Name | Address |
 |-------|------|---------|
 | Owner | County of Spokane | Spokane, WA |
-| Operator | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Operator | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

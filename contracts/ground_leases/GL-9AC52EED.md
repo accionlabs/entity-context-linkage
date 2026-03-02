@@ -8,7 +8,7 @@ THIS LEASE made September 24, 2014 between the Lessor and Lessee identified belo
 | Party | Name | Address |
 |-------|------|---------|
 | Lessor | First Baptist Church of Louisville | Louisville, KY |
-| Lessee | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Lessee | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

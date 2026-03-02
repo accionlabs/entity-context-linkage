@@ -9,8 +9,8 @@ Lakewood, CO
 
 **LESSEE:**  
 Summit USA Inc.  
-2000 Corporate Drive  
-Canonsburg, PA 15317  
+100 Summit Way  
+Tech Valley, CA 94043  
 ("Lessee" or "Summit")
 
 ---

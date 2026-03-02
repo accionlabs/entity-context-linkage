@@ -5,7 +5,7 @@ This GROUND LEASE AGREEMENT (hereinafter referred to as the "Agreement") is ente
 | Party | Name | Address |
 |-------|------|---------|
 | Landowner | Warren County Government | Warren, MI |
-| Lessee | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Lessee | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

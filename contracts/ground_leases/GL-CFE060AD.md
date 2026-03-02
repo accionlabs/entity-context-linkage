@@ -5,7 +5,7 @@ THIS LEASE made 05/18/2014 between the Lessor and Lessee identified below:
 | Party | Name | Address |
 |-------|------|---------|
 | Owner | San Antonio Industrial Park Associates | San Antonio, TX |
-| Operator | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Operator | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

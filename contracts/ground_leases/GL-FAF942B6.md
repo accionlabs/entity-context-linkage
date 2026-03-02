@@ -5,7 +5,7 @@
 | Party | Name | Address |
 |-------|------|---------|
 | Landowner | General Services Admin. | Richmond, VA |
-| Lessee | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Lessee | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

@@ -5,7 +5,7 @@
 | Party | Name | Address |
 |-------|------|---------|
 | Landlord | Town of Independence | Independence, MO |
-| Tenant | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Tenant | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

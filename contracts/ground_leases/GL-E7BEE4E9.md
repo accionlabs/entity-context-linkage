@@ -8,7 +8,7 @@
 | Party | Name | Address |
 |-------|------|---------|
 | Landowner | Warren Land Conservation Trust | Warren, MI |
-| Lessee | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Lessee | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 

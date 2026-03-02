@@ -5,7 +5,7 @@
 | Party | Name | Address |
 |-------|------|---------|
 | Owner | St. Paul Agricultural Preservation Trust | St. Paul, MN |
-| Operator | Summit USA Inc. | 2000 Corporate Drive, Canonsburg, PA 15317 |
+| Operator | Summit USA Inc. | 100 Summit Way, Tech Valley, CA 94043 |
 
 ---
 
