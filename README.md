@@ -14,16 +14,17 @@ The ECL framework orchestrates a seamless flow from raw data to business intelli
 
 ```mermaid
 graph TD
-    raw[Unstructured Documents] --> moe[MoE Expert Pipeline]
-    moe --> vald[Validation & Hallucination Guard]
-    vald --> llm[Ollama / Local LLM Inference]
-    llm --> graph[(FalkorDB Knowledge Graph)]
+    raw["Unstructured Documents"] --> moe["MoE Expert Pipeline"]
+    moe --> vald["Validation / Hallucination Guard"]
+    vald --> llm["Ollama / Local LLM"]
+    llm --> db[("FalkorDB Knowledge Graph")]
     
-    data[8 Heterogeneous Data Sources] --> recon[9-Way Reconciliation Engine]
-    recon --> dash[Impact Dashboard - $47.3M ROI]
+    data["8 Data Sources"] --> recon["Reconciliation Engine"]
+    recon --> dash["Impact Dashboard ($47.3M ROI)"]
     
-    graph --> mcp[MCP Tool Orchestration]
-    mcp --> agents[AI Reasoning Agents]
+    db --> mcp["MCP Tool Orchestration"]
+    mcp --> agents["AI Reasoning Agents"]
+    dash --> agents
 ```
 
 ### Infrastructure Layers
